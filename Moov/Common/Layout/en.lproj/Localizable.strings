@@ -1,0 +1,15 @@
+/* 
+  Localizable.strings
+  Moov
+
+  Created by Jade Silveira on 01/12/21.
+  
+*/
+"loadError" = "Unable to load data";
+"emptySearchTitle" = "We didn't find any movie";
+"emptySearchMessage" = "Make sure the title is spelled correctly.";
+"errorSearchTitle" = "Looks like there was an error!";
+"errorSearchMessage" = "Try again later.";
+"errorSearchButton" = "Try again";
+"welcomeTitle" = "Welcome!";
+"welcomeMessage" = "Start a search to find the movie you are looking for.";
