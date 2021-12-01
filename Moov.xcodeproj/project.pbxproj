@@ -9,14 +9,24 @@
 /* Begin PBXBuildFile section */
 		1DF3408E2757EC6700FC5F64 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1DF3408D2757EC6700FC5F64 /* AppDelegate.swift */; };
 		1DF340902757EC6700FC5F64 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1DF3408F2757EC6700FC5F64 /* SceneDelegate.swift */; };
-		1DF340922757EC6700FC5F64 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1DF340912757EC6700FC5F64 /* ViewController.swift */; };
-		1DF340952757EC6700FC5F64 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 1DF340932757EC6700FC5F64 /* Main.storyboard */; };
 		1DF340982757EC6700FC5F64 /* Moov.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 1DF340962757EC6700FC5F64 /* Moov.xcdatamodeld */; };
 		1DF3409A2757EC6A00FC5F64 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 1DF340992757EC6A00FC5F64 /* Assets.xcassets */; };
 		1DF3409D2757EC6A00FC5F64 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 1DF3409B2757EC6A00FC5F64 /* LaunchScreen.storyboard */; };
 		1DF340A82757EC6A00FC5F64 /* MoovTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1DF340A72757EC6A00FC5F64 /* MoovTests.swift */; };
 		1DF340B22757EC6A00FC5F64 /* MoovUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1DF340B12757EC6A00FC5F64 /* MoovUITests.swift */; };
 		1DF340B42757EC6A00FC5F64 /* MoovUITestsLaunchTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1DF340B32757EC6A00FC5F64 /* MoovUITestsLaunchTests.swift */; };
+		1DF340C62757F11300FC5F64 /* MovieListViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1DF340C52757F11300FC5F64 /* MovieListViewController.swift */; };
+		1DF340C82757F12200FC5F64 /* MovieListInteractor.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1DF340C72757F12200FC5F64 /* MovieListInteractor.swift */; };
+		1DF340CA2757F13A00FC5F64 /* MovieListPresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1DF340C92757F13A00FC5F64 /* MovieListPresenter.swift */; };
+		1DF340CC2757F33400FC5F64 /* MovieDetailsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1DF340CB2757F33400FC5F64 /* MovieDetailsViewController.swift */; };
+		1DF340CE2757F34200FC5F64 /* MovieDetailsInteractor.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1DF340CD2757F34200FC5F64 /* MovieDetailsInteractor.swift */; };
+		1DF340D02757F34D00FC5F64 /* MovieDetailsPresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1DF340CF2757F34D00FC5F64 /* MovieDetailsPresenter.swift */; };
+		1DF340D42757F50C00FC5F64 /* Coordinating.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1DF340D32757F50C00FC5F64 /* Coordinating.swift */; };
+		1DF340D62757F56100FC5F64 /* MainCoordinator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1DF340D52757F56100FC5F64 /* MainCoordinator.swift */; };
+		1DF340D82757F5F600FC5F64 /* MovieListCoordinator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1DF340D72757F5F600FC5F64 /* MovieListCoordinator.swift */; };
+		1DF340DA2757F64F00FC5F64 /* MovieListFactory.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1DF340D92757F64F00FC5F64 /* MovieListFactory.swift */; };
+		1DF340DC2757FCEC00FC5F64 /* MovieDetailsCoordinator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1DF340DB2757FCEC00FC5F64 /* MovieDetailsCoordinator.swift */; };
+		1DF340DE2757FD1200FC5F64 /* MovieDetailsFactory.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1DF340DD2757FD1200FC5F64 /* MovieDetailsFactory.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -40,8 +50,6 @@
 		1DF3408A2757EC6700FC5F64 /* Moov.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Moov.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		1DF3408D2757EC6700FC5F64 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		1DF3408F2757EC6700FC5F64 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
-		1DF340912757EC6700FC5F64 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
-		1DF340942757EC6700FC5F64 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		1DF340972757EC6700FC5F64 /* Moov.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = Moov.xcdatamodel; sourceTree = "<group>"; };
 		1DF340992757EC6A00FC5F64 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		1DF3409C2757EC6A00FC5F64 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
@@ -51,6 +59,18 @@
 		1DF340AD2757EC6A00FC5F64 /* MoovUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = MoovUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		1DF340B12757EC6A00FC5F64 /* MoovUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MoovUITests.swift; sourceTree = "<group>"; };
 		1DF340B32757EC6A00FC5F64 /* MoovUITestsLaunchTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MoovUITestsLaunchTests.swift; sourceTree = "<group>"; };
+		1DF340C52757F11300FC5F64 /* MovieListViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MovieListViewController.swift; sourceTree = "<group>"; };
+		1DF340C72757F12200FC5F64 /* MovieListInteractor.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MovieListInteractor.swift; sourceTree = "<group>"; };
+		1DF340C92757F13A00FC5F64 /* MovieListPresenter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MovieListPresenter.swift; sourceTree = "<group>"; };
+		1DF340CB2757F33400FC5F64 /* MovieDetailsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MovieDetailsViewController.swift; sourceTree = "<group>"; };
+		1DF340CD2757F34200FC5F64 /* MovieDetailsInteractor.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MovieDetailsInteractor.swift; sourceTree = "<group>"; };
+		1DF340CF2757F34D00FC5F64 /* MovieDetailsPresenter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MovieDetailsPresenter.swift; sourceTree = "<group>"; };
+		1DF340D32757F50C00FC5F64 /* Coordinating.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Coordinating.swift; sourceTree = "<group>"; };
+		1DF340D52757F56100FC5F64 /* MainCoordinator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainCoordinator.swift; sourceTree = "<group>"; };
+		1DF340D72757F5F600FC5F64 /* MovieListCoordinator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MovieListCoordinator.swift; sourceTree = "<group>"; };
+		1DF340D92757F64F00FC5F64 /* MovieListFactory.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MovieListFactory.swift; sourceTree = "<group>"; };
+		1DF340DB2757FCEC00FC5F64 /* MovieDetailsCoordinator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MovieDetailsCoordinator.swift; sourceTree = "<group>"; };
+		1DF340DD2757FD1200FC5F64 /* MovieDetailsFactory.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MovieDetailsFactory.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -101,12 +121,10 @@
 		1DF3408C2757EC6700FC5F64 /* Moov */ = {
 			isa = PBXGroup;
 			children = (
-				1DF3408D2757EC6700FC5F64 /* AppDelegate.swift */,
-				1DF3408F2757EC6700FC5F64 /* SceneDelegate.swift */,
-				1DF340912757EC6700FC5F64 /* ViewController.swift */,
-				1DF340932757EC6700FC5F64 /* Main.storyboard */,
+				1DF340C22757EE1900FC5F64 /* AppConfiguration */,
+				1DF340C12757EE1200FC5F64 /* Scenes */,
+				1DF340C02757EE0B00FC5F64 /* Common */,
 				1DF340992757EC6A00FC5F64 /* Assets.xcassets */,
-				1DF3409B2757EC6A00FC5F64 /* LaunchScreen.storyboard */,
 				1DF3409E2757EC6A00FC5F64 /* Info.plist */,
 				1DF340962757EC6700FC5F64 /* Moov.xcdatamodeld */,
 			);
@@ -128,6 +146,58 @@
 				1DF340B32757EC6A00FC5F64 /* MoovUITestsLaunchTests.swift */,
 			);
 			path = MoovUITests;
+			sourceTree = "<group>";
+		};
+		1DF340C02757EE0B00FC5F64 /* Common */ = {
+			isa = PBXGroup;
+			children = (
+				1DF340D32757F50C00FC5F64 /* Coordinating.swift */,
+			);
+			path = Common;
+			sourceTree = "<group>";
+		};
+		1DF340C12757EE1200FC5F64 /* Scenes */ = {
+			isa = PBXGroup;
+			children = (
+				1DF340C42757F0D200FC5F64 /* MovieDetails */,
+				1DF340C32757F0CA00FC5F64 /* MovieList */,
+			);
+			path = Scenes;
+			sourceTree = "<group>";
+		};
+		1DF340C22757EE1900FC5F64 /* AppConfiguration */ = {
+			isa = PBXGroup;
+			children = (
+				1DF3408D2757EC6700FC5F64 /* AppDelegate.swift */,
+				1DF3408F2757EC6700FC5F64 /* SceneDelegate.swift */,
+				1DF340D52757F56100FC5F64 /* MainCoordinator.swift */,
+				1DF3409B2757EC6A00FC5F64 /* LaunchScreen.storyboard */,
+			);
+			path = AppConfiguration;
+			sourceTree = "<group>";
+		};
+		1DF340C32757F0CA00FC5F64 /* MovieList */ = {
+			isa = PBXGroup;
+			children = (
+				1DF340C52757F11300FC5F64 /* MovieListViewController.swift */,
+				1DF340C72757F12200FC5F64 /* MovieListInteractor.swift */,
+				1DF340C92757F13A00FC5F64 /* MovieListPresenter.swift */,
+				1DF340D72757F5F600FC5F64 /* MovieListCoordinator.swift */,
+				1DF340D92757F64F00FC5F64 /* MovieListFactory.swift */,
+			);
+			path = MovieList;
+			sourceTree = "<group>";
+		};
+		1DF340C42757F0D200FC5F64 /* MovieDetails */ = {
+			isa = PBXGroup;
+			children = (
+				1DF340CB2757F33400FC5F64 /* MovieDetailsViewController.swift */,
+				1DF340CD2757F34200FC5F64 /* MovieDetailsInteractor.swift */,
+				1DF340CF2757F34D00FC5F64 /* MovieDetailsPresenter.swift */,
+				1DF340DB2757FCEC00FC5F64 /* MovieDetailsCoordinator.swift */,
+				1DF340DD2757FD1200FC5F64 /* MovieDetailsFactory.swift */,
+			);
+			path = MovieDetails;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -236,7 +306,6 @@
 			files = (
 				1DF3409D2757EC6A00FC5F64 /* LaunchScreen.storyboard in Resources */,
 				1DF3409A2757EC6A00FC5F64 /* Assets.xcassets in Resources */,
-				1DF340952757EC6700FC5F64 /* Main.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -261,10 +330,21 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				1DF340922757EC6700FC5F64 /* ViewController.swift in Sources */,
+				1DF340DC2757FCEC00FC5F64 /* MovieDetailsCoordinator.swift in Sources */,
+				1DF340CE2757F34200FC5F64 /* MovieDetailsInteractor.swift in Sources */,
 				1DF3408E2757EC6700FC5F64 /* AppDelegate.swift in Sources */,
+				1DF340D42757F50C00FC5F64 /* Coordinating.swift in Sources */,
+				1DF340CA2757F13A00FC5F64 /* MovieListPresenter.swift in Sources */,
+				1DF340DE2757FD1200FC5F64 /* MovieDetailsFactory.swift in Sources */,
 				1DF340982757EC6700FC5F64 /* Moov.xcdatamodeld in Sources */,
+				1DF340D82757F5F600FC5F64 /* MovieListCoordinator.swift in Sources */,
+				1DF340D62757F56100FC5F64 /* MainCoordinator.swift in Sources */,
+				1DF340CC2757F33400FC5F64 /* MovieDetailsViewController.swift in Sources */,
+				1DF340C82757F12200FC5F64 /* MovieListInteractor.swift in Sources */,
 				1DF340902757EC6700FC5F64 /* SceneDelegate.swift in Sources */,
+				1DF340C62757F11300FC5F64 /* MovieListViewController.swift in Sources */,
+				1DF340D02757F34D00FC5F64 /* MovieDetailsPresenter.swift in Sources */,
+				1DF340DA2757F64F00FC5F64 /* MovieListFactory.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -301,14 +381,6 @@
 /* End PBXTargetDependency section */
 
 /* Begin PBXVariantGroup section */
-		1DF340932757EC6700FC5F64 /* Main.storyboard */ = {
-			isa = PBXVariantGroup;
-			children = (
-				1DF340942757EC6700FC5F64 /* Base */,
-			);
-			name = Main.storyboard;
-			sourceTree = "<group>";
-		};
 		1DF3409B2757EC6A00FC5F64 /* LaunchScreen.storyboard */ = {
 			isa = PBXVariantGroup;
 			children = (
@@ -448,7 +520,7 @@
 				INFOPLIST_FILE = Moov/Info.plist;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchStoryboardName = LaunchScreen;
-				INFOPLIST_KEY_UIMainStoryboardFile = Main;
+				INFOPLIST_KEY_UIMainStoryboardFile = "";
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
 				LD_RUNPATH_SEARCH_PATHS = (
@@ -476,7 +548,7 @@
 				INFOPLIST_FILE = Moov/Info.plist;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchStoryboardName = LaunchScreen;
-				INFOPLIST_KEY_UIMainStoryboardFile = Main;
+				INFOPLIST_KEY_UIMainStoryboardFile = "";
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
 				LD_RUNPATH_SEARCH_PATHS = (
