@@ -6,9 +6,20 @@
 //
 
 protocol MovieDetailsPresenting {
-    
+    func presentLoading()
+    func hideLoading()
 }
 
 final class MovieDetailsPresenter: MovieDetailsPresenting {
     weak var viewController: MovieDetailsDisplaying?
+    
+    func presentLoading() {
+        viewController?.displayLoading()
+        viewController?.startLoading()
+    }
+    
+    func hideLoading() {
+        viewController?.hideLoading()
+        viewController?.stopLoading()
+    }
 }

@@ -21,6 +21,6 @@ final class MovieDetailsCoordinator: MovieDetailsCoordinating {
 
     func start() {
         let viewController = MovieDetailsFactory.make(coordinator: self)
-        navigationController.pushViewController(viewController, animated: false)
+        navigationController.pushViewController(viewController, animated: true)
     }
 }

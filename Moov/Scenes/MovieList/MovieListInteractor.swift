@@ -54,6 +54,6 @@ final class MovieListInteractor: MovieListInteracting {
     }
     
     func didSelect(searchItem: MovieResponse) {
-        
+        coordinator.navigateToMovieDetails(movieId: searchItem.id)
     }
 }

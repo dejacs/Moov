@@ -9,6 +9,7 @@ import Foundation
 
 protocol MovieListServicing {
     func fetchDailyTrendingMovieList(completion: @escaping (Result<MovieListResponse, ApiError>) -> Void)
+    func fetchWeeklyTrendingMovieList(completion: @escaping (Result<MovieListResponse, ApiError>) -> Void)
 }
 
 final class MovieListService: MovieListServicing {
@@ -19,8 +20,14 @@ final class MovieListService: MovieListServicing {
     }
     
     func fetchDailyTrendingMovieList(completion: @escaping (Result<MovieListResponse, ApiError>) -> Void) {
-        network.fetchData(
-            with: MovieEndpoint.trendingDaily,
+        network.fetchData(with: MovieEndpoint.trendingDaily,
+            resultType: MovieListResponse.self,
+            decodingStrategy: .convertFromSnakeCase,
+            completion: completion)
+    }
+    
+    func fetchWeeklyTrendingMovieList(completion: @escaping (Result<MovieListResponse, ApiError>) -> Void) {
+        network.fetchData(with: MovieEndpoint.trendingWeekly,
             resultType: MovieListResponse.self,
             decodingStrategy: .convertFromSnakeCase,
             completion: completion)

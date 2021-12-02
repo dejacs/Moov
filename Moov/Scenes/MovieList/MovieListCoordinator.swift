@@ -8,7 +8,7 @@
 import UIKit
 
 protocol MovieListCoordinating: Coordinating {
-    
+    func navigateToMovieDetails(movieId: Int)
 }
 
 final class MovieListCoordinator: MovieListCoordinating {
@@ -21,6 +21,12 @@ final class MovieListCoordinator: MovieListCoordinating {
 
     func start() {
         let viewController = MovieListFactory.make(coordinator: self)
-        navigationController.pushViewController(viewController, animated: false)
+        navigationController.pushViewController(viewController, animated: true)
+    }
+    
+    func navigateToMovieDetails(movieId: Int) {
+        let coordinator = MovieDetailsCoordinator(navigationController: navigationController)
+        coordinator.start()
+        childCoordinators.append(coordinator)
     }
 }

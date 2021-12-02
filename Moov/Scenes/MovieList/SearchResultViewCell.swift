@@ -16,7 +16,7 @@ fileprivate enum Layout {
     }
 }
 
-final class SearchResultViewCell: UITableViewCell {
+class SearchResultViewCell: UITableViewCell {
     static let identifier = Layout.Cell.identifier
     
     private lazy var titleLabel: UILabel = {
