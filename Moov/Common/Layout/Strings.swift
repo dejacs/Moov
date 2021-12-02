@@ -37,4 +37,3 @@ enum Strings {
         static let welcomeMessage = "welcomeMessage"
     }
 }
-

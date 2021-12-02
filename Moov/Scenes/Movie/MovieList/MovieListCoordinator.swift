@@ -25,7 +25,7 @@ final class MovieListCoordinator: MovieListCoordinating {
     }
     
     func navigateToMovieDetails(movieId: Int) {
-        let coordinator = MovieDetailsCoordinator(navigationController: navigationController)
+        let coordinator = MovieDetailsCoordinator(navigationController: navigationController, movieId: movieId)
         coordinator.start()
         childCoordinators.append(coordinator)
     }

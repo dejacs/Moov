@@ -1,5 +1,5 @@
 //
-//  SearchResultViewCell.swift
+//  MovieViewCell.swift
 //  Moov
 //
 //  Created by Jade Silveira on 01/12/21.
@@ -9,14 +9,14 @@ import UIKit
 
 fileprivate enum Layout {
     enum Cell {
-        static let identifier = "SearchResultViewCell"
+        static let identifier = "MovieViewCell"
     }
     enum Label {
         static let numberOfLines = 1
     }
 }
 
-class SearchResultViewCell: UITableViewCell {
+class MovieViewCell: UITableViewCell {
     static let identifier = Layout.Cell.identifier
     
     private lazy var titleLabel: UILabel = {
@@ -47,7 +47,7 @@ class SearchResultViewCell: UITableViewCell {
 }
 
 // MARK: - ViewConfiguration
-extension SearchResultViewCell: ViewConfiguration {
+extension MovieViewCell: ViewConfiguration {
     func buildViewHierarchy() {
         addSubview(titleLabel)
     }

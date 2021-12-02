@@ -32,14 +32,14 @@ final class MovieListViewController: UIViewController {
     }()
     
     private lazy var searchController: UISearchController = {
-        let searchController = SearchItemsController(searchResultsController: nil)
+        let searchController = CustomSearchController(searchResultsController: nil)
         searchController.setupSearchBar(delegate: self)
         return searchController
     }()
     
     private lazy var searchResultTable: UITableView = {
         let tableView = UITableView()
-        tableView.register(SearchResultViewCell.self, forCellReuseIdentifier: SearchResultViewCell.identifier)
+        tableView.register(MovieViewCell.self, forCellReuseIdentifier: MovieViewCell.identifier)
         tableView.rowHeight = UITableView.automaticDimension
         tableView.sectionHeaderHeight = UITableView.automaticDimension
         tableView.estimatedRowHeight = 70
@@ -134,14 +134,14 @@ extension MovieListViewController: UITableViewDataSource {
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        guard let cell = tableView.dequeueReusableCell(withIdentifier: SearchResultViewCell.identifier) as? SearchResultViewCell
+        guard let cell = tableView.dequeueReusableCell(withIdentifier: MovieViewCell.identifier) as? MovieViewCell
         else { return .init() }
         cell.setup(searchItem: searchDataSource[indexPath.row])
         return cell
     }
     
     func tableView(_ tableView: UITableView, viewForHeaderInSection section: Int) -> UIView? {
-        let view = SearchResultViewHeader()
+        let view = MovieViewHeader()
         view.display(totalResults: totalResults)
         return view
     }

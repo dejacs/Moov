@@ -8,10 +8,10 @@
 import UIKit
 
 enum MovieDetailsFactory {
-    static func make(coordinator: MovieDetailsCoordinating) -> UIViewController {
+    static func make(coordinator: MovieDetailsCoordinating, movieId: Int) -> UIViewController {
         let presenter = MovieDetailsPresenter()
         let service = MovieDetailsService(network: Network())
-        let interactor = MovieDetailsInteractor(presenter: presenter, coordinator: coordinator, service: service, movieId: 617653)
+        let interactor = MovieDetailsInteractor(presenter: presenter, coordinator: coordinator, service: service, movieId: movieId)
         let viewController = MovieDetailsViewController(interactor: interactor)
         
         presenter.viewController = viewController

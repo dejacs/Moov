@@ -1,5 +1,5 @@
 //
-//  SearchResultViewHeader.swift
+//  MovieViewHeader.swift
 //  Moov
 //
 //  Created by Jade Silveira on 01/12/21.
@@ -13,7 +13,7 @@ fileprivate enum Layout {
     }
 }
 
-final class SearchResultViewHeader: UIView {
+final class MovieViewHeader: UIView {
     private lazy var totalResultsLabel: UILabel = {
         let label = UILabel()
         label.font = label.font.withSize(LayoutDefaults.FontSize.base01)
@@ -36,7 +36,7 @@ final class SearchResultViewHeader: UIView {
 }
 
 // MARK: - ViewConfiguration
-extension SearchResultViewHeader: ViewConfiguration {
+extension MovieViewHeader: ViewConfiguration {
     func buildViewHierarchy() {
         addSubview(totalResultsLabel)
     }

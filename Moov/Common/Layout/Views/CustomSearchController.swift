@@ -1,5 +1,5 @@
 //
-//  SearchItemsController.swift
+//  CustomSearchController.swift
 //  Moov
 //
 //  Created by Jade Silveira on 01/12/21.
@@ -7,7 +7,7 @@
 
 import UIKit
 
-final class SearchItemsController: UISearchController {
+final class CustomSearchController: UISearchController {
     private var isSearchBarEmpty: Bool {
         return searchBar.text?.isEmpty ?? true
     }
