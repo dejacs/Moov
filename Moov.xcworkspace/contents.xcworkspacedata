@@ -2,10 +2,10 @@
 <Workspace
    version = "1.0">
    <FileRef
-      location = "group:Moov.xcodeproj">
+      location = "group:NetworkCore/NetworkCore.xcodeproj">
    </FileRef>
    <FileRef
-      location = "group:Network/Network.xcodeproj">
+      location = "group:Moov.xcodeproj">
    </FileRef>
    <FileRef
       location = "group:Pods/Pods.xcodeproj">

@@ -6,6 +6,7 @@
 //
 
 import Foundation
+import NetworkCore
 
 protocol MovieListServicing {
     func fetchDailyTrendingMovieList(completion: @escaping (Result<MovieListResponse, ApiError>) -> Void)

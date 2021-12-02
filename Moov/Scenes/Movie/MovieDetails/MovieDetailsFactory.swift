@@ -6,6 +6,7 @@
 //
 
 import UIKit
+import NetworkCore
 
 enum MovieDetailsFactory {
     static func make(coordinator: MovieDetailsCoordinating, movieId: Int) -> UIViewController {

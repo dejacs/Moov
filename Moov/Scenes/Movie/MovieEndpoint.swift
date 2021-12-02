@@ -6,6 +6,7 @@
 //
 
 import Foundation
+import NetworkCore
 
 enum MovieEndpoint: EndpointProtocol {
     case trendingDaily
