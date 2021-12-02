@@ -7,6 +7,8 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		0B3BEA58B0BCB63B8E0B866E /* Pods_MoovTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 841863F8833C02414C1801AF /* Pods_MoovTests.framework */; };
+		149307419309492D654B435C /* Pods_Moov_MoovUITests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = EB9A066D2580A9954AEAC937 /* Pods_Moov_MoovUITests.framework */; };
 		1DA8CEED2758155E00E6FD42 /* ViewConfiguration.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1DA8CEEC2758155E00E6FD42 /* ViewConfiguration.swift */; };
 		1DA8CEEF2758157A00E6FD42 /* Strings.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1DA8CEEE2758157A00E6FD42 /* Strings.swift */; };
 		1DA8CEF12758159C00E6FD42 /* LayoutDefaults.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1DA8CEF02758159C00E6FD42 /* LayoutDefaults.swift */; };
@@ -33,7 +35,6 @@
 		1DA8CFCF2758627300E6FD42 /* MovieDetailsService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1DA8CFCE2758627300E6FD42 /* MovieDetailsService.swift */; };
 		1DF3408E2757EC6700FC5F64 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1DF3408D2757EC6700FC5F64 /* AppDelegate.swift */; };
 		1DF340902757EC6700FC5F64 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1DF3408F2757EC6700FC5F64 /* SceneDelegate.swift */; };
-		1DF340982757EC6700FC5F64 /* Moov.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 1DF340962757EC6700FC5F64 /* Moov.xcdatamodeld */; };
 		1DF3409A2757EC6A00FC5F64 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 1DF340992757EC6A00FC5F64 /* Assets.xcassets */; };
 		1DF3409D2757EC6A00FC5F64 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 1DF3409B2757EC6A00FC5F64 /* LaunchScreen.storyboard */; };
 		1DF340A82757EC6A00FC5F64 /* MoovTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1DF340A72757EC6A00FC5F64 /* MoovTests.swift */; };
@@ -51,6 +52,7 @@
 		1DF340DA2757F64F00FC5F64 /* MovieListFactory.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1DF340D92757F64F00FC5F64 /* MovieListFactory.swift */; };
 		1DF340DC2757FCEC00FC5F64 /* MovieDetailsCoordinator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1DF340DB2757FCEC00FC5F64 /* MovieDetailsCoordinator.swift */; };
 		1DF340DE2757FD1200FC5F64 /* MovieDetailsFactory.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1DF340DD2757FD1200FC5F64 /* MovieDetailsFactory.swift */; };
+		34D702A26B6E5C8F0C26165B /* Pods_Moov.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 15DC92836CCD015A7CA3165A /* Pods_Moov.framework */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -71,6 +73,8 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		15DC92836CCD015A7CA3165A /* Pods_Moov.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Moov.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		1AE7A2245A4C0F73927257B9 /* Pods-MoovTests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-MoovTests.release.xcconfig"; path = "Target Support Files/Pods-MoovTests/Pods-MoovTests.release.xcconfig"; sourceTree = "<group>"; };
 		1DA8CEEC2758155E00E6FD42 /* ViewConfiguration.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewConfiguration.swift; sourceTree = "<group>"; };
 		1DA8CEEE2758157A00E6FD42 /* Strings.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Strings.swift; sourceTree = "<group>"; };
 		1DA8CEF02758159C00E6FD42 /* LayoutDefaults.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LayoutDefaults.swift; sourceTree = "<group>"; };
@@ -100,7 +104,6 @@
 		1DF3408A2757EC6700FC5F64 /* Moov.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Moov.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		1DF3408D2757EC6700FC5F64 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		1DF3408F2757EC6700FC5F64 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
-		1DF340972757EC6700FC5F64 /* Moov.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = Moov.xcdatamodel; sourceTree = "<group>"; };
 		1DF340992757EC6A00FC5F64 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		1DF3409C2757EC6A00FC5F64 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		1DF3409E2757EC6A00FC5F64 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
@@ -121,6 +124,13 @@
 		1DF340D92757F64F00FC5F64 /* MovieListFactory.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MovieListFactory.swift; sourceTree = "<group>"; };
 		1DF340DB2757FCEC00FC5F64 /* MovieDetailsCoordinator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MovieDetailsCoordinator.swift; sourceTree = "<group>"; };
 		1DF340DD2757FD1200FC5F64 /* MovieDetailsFactory.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MovieDetailsFactory.swift; sourceTree = "<group>"; };
+		499856166063B00CF1F26D22 /* Pods-Moov.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Moov.release.xcconfig"; path = "Target Support Files/Pods-Moov/Pods-Moov.release.xcconfig"; sourceTree = "<group>"; };
+		57A422ECFDD4835D5A011EBF /* Pods-Moov.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Moov.debug.xcconfig"; path = "Target Support Files/Pods-Moov/Pods-Moov.debug.xcconfig"; sourceTree = "<group>"; };
+		6FFB05A812B5B51E1686FF19 /* Pods-Moov-MoovUITests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Moov-MoovUITests.release.xcconfig"; path = "Target Support Files/Pods-Moov-MoovUITests/Pods-Moov-MoovUITests.release.xcconfig"; sourceTree = "<group>"; };
+		841863F8833C02414C1801AF /* Pods_MoovTests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_MoovTests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		A8AC4F0DCC4ED532513CBF75 /* Pods-MoovTests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-MoovTests.debug.xcconfig"; path = "Target Support Files/Pods-MoovTests/Pods-MoovTests.debug.xcconfig"; sourceTree = "<group>"; };
+		CDF3D3A4A9F2E5005B9D11E4 /* Pods-Moov-MoovUITests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Moov-MoovUITests.debug.xcconfig"; path = "Target Support Files/Pods-Moov-MoovUITests/Pods-Moov-MoovUITests.debug.xcconfig"; sourceTree = "<group>"; };
+		EB9A066D2580A9954AEAC937 /* Pods_Moov_MoovUITests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Moov_MoovUITests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -128,6 +138,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				34D702A26B6E5C8F0C26165B /* Pods_Moov.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -135,6 +146,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				0B3BEA58B0BCB63B8E0B866E /* Pods_MoovTests.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -142,6 +154,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				149307419309492D654B435C /* Pods_Moov_MoovUITests.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -239,6 +252,8 @@
 				1DF340A62757EC6A00FC5F64 /* MoovTests */,
 				1DF340B02757EC6A00FC5F64 /* MoovUITests */,
 				1DF3408B2757EC6700FC5F64 /* Products */,
+				8728129F33E04920C8C37CD0 /* Pods */,
+				4AD64BE5BCB96E5123E51F73 /* Frameworks */,
 			);
 			sourceTree = "<group>";
 		};
@@ -260,7 +275,6 @@
 				1DF340C02757EE0B00FC5F64 /* Common */,
 				1DF340992757EC6A00FC5F64 /* Assets.xcassets */,
 				1DF3409E2757EC6A00FC5F64 /* Info.plist */,
-				1DF340962757EC6700FC5F64 /* Moov.xcdatamodeld */,
 			);
 			path = Moov;
 			sourceTree = "<group>";
@@ -338,6 +352,29 @@
 			path = MovieDetails;
 			sourceTree = "<group>";
 		};
+		4AD64BE5BCB96E5123E51F73 /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				15DC92836CCD015A7CA3165A /* Pods_Moov.framework */,
+				EB9A066D2580A9954AEAC937 /* Pods_Moov_MoovUITests.framework */,
+				841863F8833C02414C1801AF /* Pods_MoovTests.framework */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		8728129F33E04920C8C37CD0 /* Pods */ = {
+			isa = PBXGroup;
+			children = (
+				57A422ECFDD4835D5A011EBF /* Pods-Moov.debug.xcconfig */,
+				499856166063B00CF1F26D22 /* Pods-Moov.release.xcconfig */,
+				CDF3D3A4A9F2E5005B9D11E4 /* Pods-Moov-MoovUITests.debug.xcconfig */,
+				6FFB05A812B5B51E1686FF19 /* Pods-Moov-MoovUITests.release.xcconfig */,
+				A8AC4F0DCC4ED532513CBF75 /* Pods-MoovTests.debug.xcconfig */,
+				1AE7A2245A4C0F73927257B9 /* Pods-MoovTests.release.xcconfig */,
+			);
+			path = Pods;
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
@@ -345,6 +382,7 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = 1DF340B72757EC6A00FC5F64 /* Build configuration list for PBXNativeTarget "Moov" */;
 			buildPhases = (
+				F6B995E4EE01C60D7A27AF72 /* [CP] Check Pods Manifest.lock */,
 				1DF340862757EC6700FC5F64 /* Sources */,
 				1DF340872757EC6700FC5F64 /* Frameworks */,
 				1DF340882757EC6700FC5F64 /* Resources */,
@@ -362,6 +400,7 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = 1DF340BA2757EC6A00FC5F64 /* Build configuration list for PBXNativeTarget "MoovTests" */;
 			buildPhases = (
+				6962D43C60E4FB589A711B0A /* [CP] Check Pods Manifest.lock */,
 				1DF3409F2757EC6A00FC5F64 /* Sources */,
 				1DF340A02757EC6A00FC5F64 /* Frameworks */,
 				1DF340A12757EC6A00FC5F64 /* Resources */,
@@ -380,6 +419,7 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = 1DF340BD2757EC6A00FC5F64 /* Build configuration list for PBXNativeTarget "MoovUITests" */;
 			buildPhases = (
+				866E99F80DA41519C25E541A /* [CP] Check Pods Manifest.lock */,
 				1DF340A92757EC6A00FC5F64 /* Sources */,
 				1DF340AA2757EC6A00FC5F64 /* Frameworks */,
 				1DF340AB2757EC6A00FC5F64 /* Resources */,
@@ -465,6 +505,75 @@
 		};
 /* End PBXResourcesBuildPhase section */
 
+/* Begin PBXShellScriptBuildPhase section */
+		6962D43C60E4FB589A711B0A /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+			);
+			inputPaths = (
+				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
+				"${PODS_ROOT}/Manifest.lock",
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputFileListPaths = (
+			);
+			outputPaths = (
+				"$(DERIVED_FILE_DIR)/Pods-MoovTests-checkManifestLockResult.txt",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
+			showEnvVarsInLog = 0;
+		};
+		866E99F80DA41519C25E541A /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+			);
+			inputPaths = (
+				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
+				"${PODS_ROOT}/Manifest.lock",
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputFileListPaths = (
+			);
+			outputPaths = (
+				"$(DERIVED_FILE_DIR)/Pods-Moov-MoovUITests-checkManifestLockResult.txt",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
+			showEnvVarsInLog = 0;
+		};
+		F6B995E4EE01C60D7A27AF72 /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+			);
+			inputPaths = (
+				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
+				"${PODS_ROOT}/Manifest.lock",
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputFileListPaths = (
+			);
+			outputPaths = (
+				"$(DERIVED_FILE_DIR)/Pods-Moov-checkManifestLockResult.txt",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
+			showEnvVarsInLog = 0;
+		};
+/* End PBXShellScriptBuildPhase section */
+
 /* Begin PBXSourcesBuildPhase section */
 		1DF340862757EC6700FC5F64 /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
@@ -488,7 +597,6 @@
 				1DA8CFC72758549600E6FD42 /* MovieListResponse.swift in Sources */,
 				1DA8CF142758246C00E6FD42 /* EndpointProtocol.swift in Sources */,
 				1DF340DE2757FD1200FC5F64 /* MovieDetailsFactory.swift in Sources */,
-				1DF340982757EC6700FC5F64 /* Moov.xcdatamodeld in Sources */,
 				1DA8CF0B275823CD00E6FD42 /* DispatchQueue+Extension.swift in Sources */,
 				1DF340D82757F5F600FC5F64 /* MovieListCoordinator.swift in Sources */,
 				1DF340D62757F56100FC5F64 /* MainCoordinator.swift in Sources */,
@@ -685,6 +793,7 @@
 		};
 		1DF340B82757EC6A00FC5F64 /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 57A422ECFDD4835D5A011EBF /* Pods-Moov.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
@@ -713,6 +822,7 @@
 		};
 		1DF340B92757EC6A00FC5F64 /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 499856166063B00CF1F26D22 /* Pods-Moov.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
@@ -741,6 +851,7 @@
 		};
 		1DF340BB2757EC6A00FC5F64 /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = A8AC4F0DCC4ED532513CBF75 /* Pods-MoovTests.debug.xcconfig */;
 			buildSettings = {
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				BUNDLE_LOADER = "$(TEST_HOST)";
@@ -766,6 +877,7 @@
 		};
 		1DF340BC2757EC6A00FC5F64 /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 1AE7A2245A4C0F73927257B9 /* Pods-MoovTests.release.xcconfig */;
 			buildSettings = {
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				BUNDLE_LOADER = "$(TEST_HOST)";
@@ -791,6 +903,7 @@
 		};
 		1DF340BE2757EC6A00FC5F64 /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = CDF3D3A4A9F2E5005B9D11E4 /* Pods-Moov-MoovUITests.debug.xcconfig */;
 			buildSettings = {
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				CODE_SIGN_STYLE = Automatic;
@@ -814,6 +927,7 @@
 		};
 		1DF340BF2757EC6A00FC5F64 /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 6FFB05A812B5B51E1686FF19 /* Pods-Moov-MoovUITests.release.xcconfig */;
 			buildSettings = {
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				CODE_SIGN_STYLE = Automatic;
@@ -875,19 +989,6 @@
 			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
-
-/* Begin XCVersionGroup section */
-		1DF340962757EC6700FC5F64 /* Moov.xcdatamodeld */ = {
-			isa = XCVersionGroup;
-			children = (
-				1DF340972757EC6700FC5F64 /* Moov.xcdatamodel */,
-			);
-			currentVersion = 1DF340972757EC6700FC5F64 /* Moov.xcdatamodel */;
-			path = Moov.xcdatamodeld;
-			sourceTree = "<group>";
-			versionGroupType = wrapper.xcdatamodel;
-		};
-/* End XCVersionGroup section */
 	};
 	rootObject = 1DF340822757EC6700FC5F64 /* Project object */;
 }
