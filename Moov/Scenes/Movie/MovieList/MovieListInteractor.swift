@@ -46,7 +46,19 @@ final class MovieListInteractor: MovieListInteracting {
     }
     
     func search(by text: String) {
+        self.presenter.presentLoading()
         
+        service.search(movieText: text) { [weak self] result in
+            guard let self = self else { return }
+            self.presenter.hideLoading()
+            
+            switch result {
+            case .success(let movieList):
+                self.presenter.present(movieListResponse: movieList)
+            case .failure:
+                print("failure")
+            }
+        }
     }
     
     func loadNextPage() {

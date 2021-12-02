@@ -20,7 +20,7 @@ final class MovieDetailsService: MovieDetailsServicing {
     }
     
     func search(movieId: Int, completion: @escaping (Result<MovieResponse, ApiError>) -> Void) {
-        network.fetchData(with: MovieEndpoint.search(movieId: movieId),
+        network.fetchData(with: MovieEndpoint.searchMovieId(movieId),
             resultType: MovieResponse.self,
             decodingStrategy: .convertFromSnakeCase,
             completion: completion)

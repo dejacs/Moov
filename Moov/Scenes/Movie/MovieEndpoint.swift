@@ -11,7 +11,8 @@ import NetworkCore
 enum MovieEndpoint: EndpointProtocol {
     case trendingDaily
     case trendingWeekly
-    case search(movieId: Int)
+    case searchMovieId(Int)
+    case searchText(String)
     
     var urlText: String {
         let apiKey = "[YOUR API KEY HERE]"
@@ -23,8 +24,11 @@ enum MovieEndpoint: EndpointProtocol {
         case .trendingWeekly:
             return "https://api.themoviedb.org/3/trending/movie/week?api_key=\(apiKey)"
             
-        case .search(let movieId):
-            return "https://api.themoviedb.org/3/movie/\(movieId)?api_key=\(apiKey)"
+        case .searchMovieId(let id):
+            return "https://api.themoviedb.org/3/movie/\(id)?api_key=\(apiKey)"
+            
+        case .searchText(let text):
+            return "https://api.themoviedb.org/3/search/movie?api_key=\(apiKey)&query=\(text)"
         }
     }
 }

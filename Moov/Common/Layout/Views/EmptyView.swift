@@ -28,7 +28,7 @@ final class EmptyView: UIView {
         label.translatesAutoresizingMaskIntoConstraints = false
         label.font = label.font.withSize(LayoutDefaults.FontSize.base03)
         label.textColor = .init(named: Strings.Color.secondaryText)
-        label.text = NSLocalizedString(Strings.LocalizableKeys.emptySearchTitle, comment: "")
+        label.text = NSLocalizedString(Strings.LocalizableKeys.Search.Empty.title, comment: "")
         label.textAlignment = .center
         label.numberOfLines = LayoutDefaults.Label.numberOfLines
         return label
@@ -39,7 +39,7 @@ final class EmptyView: UIView {
         label.translatesAutoresizingMaskIntoConstraints = false
         label.font = label.font.withSize(LayoutDefaults.FontSize.base02)
         label.textColor = .init(named: Strings.Color.tertiaryText)
-        label.text = NSLocalizedString(Strings.LocalizableKeys.emptySearchMessage, comment: "")
+        label.text = NSLocalizedString(Strings.LocalizableKeys.Search.Empty.message, comment: "")
         label.textAlignment = .center
         label.numberOfLines = LayoutDefaults.Label.numberOfLines
         return label

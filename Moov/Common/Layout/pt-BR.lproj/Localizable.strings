@@ -6,10 +6,13 @@
   
 */
 "loadError" = "Não foi possível carregar os dados";
-"emptySearchTitle" = "Não encontramos nenhum filme";
-"emptySearchMessage" = "Verifique se o título está escrito corretamente.";
-"errorSearchTitle" = "Parece que houve um erro!";
-"errorSearchMessage" = "Tente novamente mais tarde.";
-"errorSearchButton" = "Tentar novamente";
-"welcomeTitle" = "Boas vindas!";
-"welcomeMessage" = "Inicie uma busca para encontrar o filme que procura.";
+
+"search.placeholder" = "Buscar filmes";
+"search.empty.title" = "Não encontramos nenhum filme";
+"search.empty.message" = "Verifique se o título está escrito corretamente.";
+"search.error.title" = "Parece que houve um erro!";
+"search.error.message" = "Tente novamente mais tarde.";
+"search.error.button" = "Tentar novamente";
+
+"welcome.title" = "Boas vindas!";
+"welcome.message" = "Inicie uma busca para encontrar o filme que procura.";

@@ -32,7 +32,7 @@ final class ErrorView: UIView {
         label.translatesAutoresizingMaskIntoConstraints = false
         label.font = label.font.withSize(LayoutDefaults.FontSize.base03)
         label.textColor = .init(named: Strings.Color.secondaryText)
-        label.text = NSLocalizedString(Strings.LocalizableKeys.errorSearchTitle, comment: "")
+        label.text = NSLocalizedString(Strings.LocalizableKeys.Search.Error.title, comment: "")
         label.textAlignment = .center
         label.numberOfLines = LayoutDefaults.Label.numberOfLines
         return label
@@ -43,7 +43,7 @@ final class ErrorView: UIView {
         label.translatesAutoresizingMaskIntoConstraints = false
         label.font = label.font.withSize(LayoutDefaults.FontSize.base02)
         label.textColor = .init(named: Strings.Color.tertiaryText)
-        label.text = NSLocalizedString(Strings.LocalizableKeys.errorSearchMessage, comment: "")
+        label.text = NSLocalizedString(Strings.LocalizableKeys.Search.Error.message, comment: "")
         label.textAlignment = .center
         label.numberOfLines = LayoutDefaults.Label.numberOfLines
         return label
@@ -51,7 +51,7 @@ final class ErrorView: UIView {
     
     private lazy var tryAgainButton: UIButton = {
         let button = UIButton()
-        button.setTitle(NSLocalizedString(Strings.LocalizableKeys.errorSearchButton, comment: ""), for: .normal)
+        button.setTitle(NSLocalizedString(Strings.LocalizableKeys.Search.Error.button, comment: ""), for: .normal)
         button.setTitleColor(.init(named: Strings.Color.linkText), for: .normal)
         button.addTarget(self, action: #selector(didTapTryAgainButton), for: .touchUpInside)
         return button

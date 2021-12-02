@@ -14,7 +14,7 @@ final class CustomSearchController: UISearchController {
     
     func setupSearchBar(delegate: UISearchBarDelegate) {
         obscuresBackgroundDuringPresentation = false
-        searchBar.placeholder = Strings.Placeholder.search
+        searchBar.placeholder = NSLocalizedString(Strings.LocalizableKeys.Search.placeholder, comment: "")
         searchBar.backgroundColor = .init(named: Strings.Color.branding)
         searchBar.delegate = delegate
         

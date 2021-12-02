@@ -6,10 +6,13 @@
   
 */
 "loadError" = "Unable to load data";
-"emptySearchTitle" = "We didn't find any movie";
-"emptySearchMessage" = "Make sure the title is spelled correctly.";
-"errorSearchTitle" = "Looks like there was an error!";
-"errorSearchMessage" = "Try again later.";
-"errorSearchButton" = "Try again";
-"welcomeTitle" = "Welcome!";
-"welcomeMessage" = "Start a search to find the movie you are looking for.";
+
+"search.placeholder" = "Search movies";
+"search.empty.title" = "We didn't find any movie";
+"search.empty.message" = "Make sure the title is spelled correctly.";
+"search.error.title" = "Looks like there was an error!";
+"search.error.message" = "Try again later.";
+"search.error.button" = "Try again";
+
+"welcome.title" = "Welcome!";
+"welcome.message" = "Start a search to find the movie you are looking for.";

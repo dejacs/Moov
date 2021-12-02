@@ -11,6 +11,7 @@ import NetworkCore
 protocol MovieListServicing {
     func fetchDailyTrendingMovieList(completion: @escaping (Result<MovieListResponse, ApiError>) -> Void)
     func fetchWeeklyTrendingMovieList(completion: @escaping (Result<MovieListResponse, ApiError>) -> Void)
+    func search(movieText: String, completion: @escaping (Result<MovieListResponse, ApiError>) -> Void)
 }
 
 final class MovieListService: MovieListServicing {
@@ -29,6 +30,13 @@ final class MovieListService: MovieListServicing {
     
     func fetchWeeklyTrendingMovieList(completion: @escaping (Result<MovieListResponse, ApiError>) -> Void) {
         network.fetchData(with: MovieEndpoint.trendingWeekly,
+            resultType: MovieListResponse.self,
+            decodingStrategy: .convertFromSnakeCase,
+            completion: completion)
+    }
+    
+    func search(movieText: String, completion: @escaping (Result<MovieListResponse, ApiError>) -> Void) {
+        network.fetchData(with: MovieEndpoint.searchText(movieText),
             resultType: MovieListResponse.self,
             decodingStrategy: .convertFromSnakeCase,
             completion: completion)

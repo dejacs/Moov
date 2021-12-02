@@ -19,7 +19,6 @@ enum Strings {
     
     enum Placeholder {
         static let image = "img_placeholder"
-        static let search = "Buscar filmes"
     }
     
     enum Locale {
@@ -28,12 +27,23 @@ enum Strings {
     
     enum LocalizableKeys {
         static let loadError = "loadError"
-        static let emptySearchTitle = "emptySearchTitle"
-        static let emptySearchMessage = "emptySearchMessage"
-        static let errorSearchTitle = "errorSearchTitle"
-        static let errorSearchMessage = "errorSearchMessage"
-        static let errorSearchButton = "errorSearchButton"
-        static let welcomeTitle = "welcomeTitle"
-        static let welcomeMessage = "welcomeMessage"
+        
+        enum Search {
+            static let placeholder = "search.placeholder"
+            
+            enum Empty {
+                static let title = "search.empty.title"
+                static let message = "search.empty.message"
+            }
+            enum Error {
+                static let title = "search.error.title"
+                static let message = "search.error.message"
+                static let button = "search.error.button"
+            }
+        }
+        enum Welcome {
+            static let title = "welcome.title"
+            static let message = "welcome.message"
+        }
     }
 }
