@@ -10,7 +10,8 @@ import UIKit
 enum MovieListFactory {
     static func make(coordinator: MovieListCoordinating) -> UIViewController {
         let presenter = MovieListPresenter()
-        let interactor = MovieListInteractor(presenter: presenter, coordinator: coordinator)
+        let service = MovieListService(network: Network())
+        let interactor = MovieListInteractor(presenter: presenter, coordinator: coordinator, service: service)
         let viewController = MovieListViewController(interactor: interactor)
         
         presenter.viewController = viewController

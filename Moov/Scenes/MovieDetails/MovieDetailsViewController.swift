@@ -14,9 +14,9 @@ protocol MovieDetailsDisplaying: AnyObject {
 final class MovieDetailsViewController: UIViewController {
     private lazy var loadingView: UIActivityIndicatorView = {
         if #available(iOS 13.0, *) {
-            return UIActivityIndicatorView(style: .large)
+            return .init(style: .large)
         }
-        return UIActivityIndicatorView(style: .medium)
+        return .init(style: .medium)
     }()
     
     private let interactor: MovieDetailsInteracting
