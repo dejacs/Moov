@@ -14,6 +14,6 @@
 "search.error.title" = "Parece que houve um erro!";
 "search.error.message" = "Tente novamente mais tarde.";
 "search.error.button" = "Tentar novamente";
+"search.results" = "%@ resultados";
 
-"welcome.title" = "Boas vindas!";
-"welcome.message" = "Inicie uma busca para encontrar o filme que procura.";
+"welcome.title" = "Boas vindas";

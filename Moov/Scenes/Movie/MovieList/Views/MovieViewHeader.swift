@@ -32,7 +32,8 @@ final class MovieViewHeader: UIView {
     required init?(coder: NSCoder) { nil }
     
     func display(totalResults: Int) {
-        totalResultsLabel.text = totalResults.description
+        let localizableResults = NSLocalizedString(Strings.LocalizableKeys.Search.results, comment: "")
+        totalResultsLabel.text = String(format: localizableResults, totalResults.description)
     }
 }
 

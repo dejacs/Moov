@@ -15,15 +15,11 @@ enum Strings {
         static let tertiaryText = "clr_tertiary_text"
         static let transparentBackground = "clr_transparent_background"
         static let linkText = "clr_link_text"
-        static let backButton = "clr_back_button"
+        static let navigationText = "clr_navigation_text"
     }
     
     enum Placeholder {
         static let image = "img_placeholder"
-    }
-    
-    enum Locale {
-        static let brazil = "pt_BR"
     }
     
     enum LocalizableKeys {
@@ -32,6 +28,7 @@ enum Strings {
         
         enum Search {
             static let placeholder = "search.placeholder"
+            static let results = "search.results"
             
             enum Empty {
                 static let title = "search.empty.title"

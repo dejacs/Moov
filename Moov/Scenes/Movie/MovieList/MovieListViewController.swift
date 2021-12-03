@@ -34,6 +34,10 @@ final class MovieListViewController: UIViewController {
         return .init(style: .medium)
     }()
     
+    override var preferredStatusBarStyle: UIStatusBarStyle {
+        return .lightContent
+    }
+    
     private lazy var searchController: UISearchController = {
         let searchController = CustomSearchController(searchResultsController: nil)
         searchController.setupSearchBar(delegate: self)
@@ -122,6 +126,12 @@ extension MovieListViewController: ViewConfiguration {
         navigationController?.navigationBar.backgroundColor = .init(named: Strings.Color.branding)
         navigationController?.navigationBar.barTintColor = .init(named: Strings.Color.branding)
         view.backgroundColor = .init(named: Strings.Color.branding)
+        
+        title = NSLocalizedString(Strings.LocalizableKeys.Welcome.title, comment: "")
+        navigationController?.navigationBar.prefersLargeTitles = true
+        navigationController?.navigationItem.largeTitleDisplayMode = .always
+        navigationController?.navigationBar.largeTitleTextAttributes = [.foregroundColor: UIColor(named: Strings.Color.navigationText) as Any]
+        
         emptyView.isHidden = true
         loadingView.isHidden = true
         setupSearchBar()
@@ -133,7 +143,6 @@ extension MovieListViewController: ViewConfiguration {
 private extension MovieListViewController {
     func setupSearchBar() {
         navigationItem.searchController = searchController
-        navigationItem.hidesSearchBarWhenScrolling = false
         definesPresentationContext = true
     }
 }

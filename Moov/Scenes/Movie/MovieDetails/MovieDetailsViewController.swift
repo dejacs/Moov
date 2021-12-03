@@ -16,9 +16,6 @@ protocol MovieDetailsDisplaying: AnyObject {
 }
 
 fileprivate enum Layout {
-    enum ImageView {
-        static let size = CGSize(width: 200, height: 500)
-    }
     enum Label {
         static let numberOfLines = 2
     }
@@ -26,16 +23,24 @@ fileprivate enum Layout {
 
 final class MovieDetailsViewController: UIViewController {
     private lazy var loadingView: UIActivityIndicatorView = {
-        if #available(iOS 13.0, *) {
-            return .init(style: .large)
-        }
-        return .init(style: .medium)
+        return .init(style: .large)
+    }()
+    
+    override var preferredStatusBarStyle: UIStatusBarStyle {
+        return .lightContent
+    }
+    
+    private lazy var scrollView: UIScrollView = {
+        let scrollView = UIScrollView()
+        scrollView.translatesAutoresizingMaskIntoConstraints = false
+        scrollView.backgroundColor = .clear
+        return scrollView
     }()
     
     private lazy var posterImageView: UIImageView = {
         let imageView = UIImageView()
         imageView.layer.masksToBounds = true
-        imageView.contentMode = .scaleAspectFit
+        imageView.contentMode = .scaleAspectFill
         imageView.translatesAutoresizingMaskIntoConstraints = false
         imageView.contentCompressionResistancePriority(for: .vertical)
         return imageView
@@ -43,7 +48,7 @@ final class MovieDetailsViewController: UIViewController {
     
     private lazy var titleLabel: UILabel = {
         let label = UILabel()
-        label.font = label.font.withSize(LayoutDefaults.FontSize.base01)
+        label.font = label.font.withSize(LayoutDefaults.FontSize.base0X)
         label.textColor = .init(named: Strings.Color.primaryText)
         label.numberOfLines = Layout.Label.numberOfLines
         label.translatesAutoresizingMaskIntoConstraints = false
@@ -52,7 +57,7 @@ final class MovieDetailsViewController: UIViewController {
     
     private lazy var overviewLabel: UILabel = {
         let label = UILabel()
-        label.font = label.font.withSize(LayoutDefaults.FontSize.base01)
+        label.font = label.font.withSize(LayoutDefaults.FontSize.base02)
         label.textColor = .init(named: Strings.Color.primaryText)
         label.numberOfLines = LayoutDefaults.Label.numberOfLines
         label.translatesAutoresizingMaskIntoConstraints = false
@@ -77,36 +82,43 @@ final class MovieDetailsViewController: UIViewController {
 
 extension MovieDetailsViewController: ViewConfiguration {
     func buildViewHierarchy() {
-        view.addSubview(posterImageView)
-        view.addSubview(titleLabel)
-        view.addSubview(overviewLabel)
+        view.addSubview(scrollView)
+        scrollView.addSubview(posterImageView)
+        scrollView.addSubview(titleLabel)
+        scrollView.addSubview(overviewLabel)
     }
     
     func setupConstraints() {
         NSLayoutConstraint.activate([
-            posterImageView.leadingAnchor.constraint(equalTo: view.leadingAnchor),
-            posterImageView.trailingAnchor.constraint(equalTo: view.trailingAnchor),
-            posterImageView.topAnchor.constraint(equalTo: view.topAnchor),
-            posterImageView.centerXAnchor.constraint(equalTo: view.centerXAnchor)
+            scrollView.leadingAnchor.constraint(equalTo: view.leadingAnchor),
+            scrollView.trailingAnchor.constraint(equalTo: view.trailingAnchor),
+            scrollView.topAnchor.constraint(equalTo: view.safeAreaLayoutGuide.topAnchor),
+            scrollView.bottomAnchor.constraint(equalTo: view.safeAreaLayoutGuide.bottomAnchor)
         ])
         NSLayoutConstraint.activate([
-            titleLabel.topAnchor.constraint(equalTo: posterImageView.bottomAnchor, constant: LayoutDefaults.View.margin02),
-            titleLabel.leadingAnchor.constraint(equalTo: view.leadingAnchor, constant: LayoutDefaults.View.margin01),
-            titleLabel.trailingAnchor.constraint(lessThanOrEqualTo: view.trailingAnchor, constant: -LayoutDefaults.View.margin01)
+            posterImageView.leadingAnchor.constraint(equalTo: scrollView.leadingAnchor),
+            posterImageView.trailingAnchor.constraint(equalTo: scrollView.trailingAnchor),
+            posterImageView.topAnchor.constraint(equalTo: scrollView.topAnchor),
+            posterImageView.centerXAnchor.constraint(equalTo: scrollView.centerXAnchor)
+        ])
+        NSLayoutConstraint.activate([
+            titleLabel.topAnchor.constraint(equalTo: posterImageView.bottomAnchor, constant: LayoutDefaults.View.margin01),
+            titleLabel.leadingAnchor.constraint(equalTo: scrollView.leadingAnchor, constant: LayoutDefaults.View.margin01),
+            titleLabel.trailingAnchor.constraint(lessThanOrEqualTo: scrollView.trailingAnchor, constant: -LayoutDefaults.View.margin01)
         ])
         NSLayoutConstraint.activate([
             overviewLabel.topAnchor.constraint(equalTo: titleLabel.bottomAnchor, constant: LayoutDefaults.View.margin01),
-            overviewLabel.leadingAnchor.constraint(equalTo: view.leadingAnchor, constant: LayoutDefaults.View.margin01),
-            overviewLabel.trailingAnchor.constraint(lessThanOrEqualTo: view.trailingAnchor, constant: -LayoutDefaults.View.margin01),
-            overviewLabel.bottomAnchor.constraint(lessThanOrEqualTo: view.bottomAnchor, constant: LayoutDefaults.View.margin01)
+            overviewLabel.leadingAnchor.constraint(equalTo: scrollView.leadingAnchor, constant: LayoutDefaults.View.margin01),
+            overviewLabel.trailingAnchor.constraint(lessThanOrEqualTo: scrollView.trailingAnchor, constant: -LayoutDefaults.View.margin01),
+            overviewLabel.bottomAnchor.constraint(equalTo: scrollView.bottomAnchor, constant: -LayoutDefaults.View.margin01)
         ])
     }
     
     func configureViews() {
         view.backgroundColor = .init(named: Strings.Color.primaryBackground)
-        navigationController?.navigationBar.tintColor = .init(named: Strings.Color.backButton)
-        navigationController?.navigationBar.backgroundColor = .init(named: Strings.Color.transparentBackground)
-        navigationController?.navigationBar.barTintColor = .init(named: Strings.Color.transparentBackground)
+        navigationController?.navigationBar.tintColor = .init(named: Strings.Color.navigationText)
+        navigationController?.navigationBar.backgroundColor = .init(named: Strings.Color.branding)
+        navigationController?.navigationBar.barTintColor = .init(named: Strings.Color.branding)
     }
 }
 
@@ -128,6 +140,7 @@ extension MovieDetailsViewController: MovieDetailsDisplaying {
     }
     
     func display(movie: MovieResponse) {
+        title = movie.title
         titleLabel.text = movie.title
         overviewLabel.text = movie.overview
         posterImageView.setImage(pathSufix: movie.posterPath)

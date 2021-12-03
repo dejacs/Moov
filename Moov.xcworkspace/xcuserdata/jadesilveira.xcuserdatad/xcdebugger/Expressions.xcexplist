@@ -10,5 +10,13 @@
             </PersistentString>
          </PersistentStrings>
       </ContextState>
+      <ContextState
+         contextName = "MovieDetailsViewController.configureViews():MovieDetailsViewController.swift">
+         <PersistentStrings>
+            <PersistentString
+               value = "navigationController?.navigationBar.subviews.filter({ view in view.subviews.first(where: { view in view is UILabel }) != nil }) as? [UILabel]">
+            </PersistentString>
+         </PersistentStrings>
+      </ContextState>
    </ContextStates>
 </VariablesViewState>
