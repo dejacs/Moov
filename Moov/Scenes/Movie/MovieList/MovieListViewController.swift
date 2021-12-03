@@ -10,11 +10,14 @@ import UIKit
 
 protocol MovieListDisplaying: AnyObject {
     func displayLoading()
-    func startLoading()
     func hideLoading()
-    func stopLoading()
     func display(movieList: MovieListResponse)
-    func displaySearchResponse(shouldDisplay: Bool)
+    func hideMovieList()
+    func displayEmpty()
+    func displayError()
+    func hideEmpty()
+    func hideError()
+    func displayErrorToast()
 }
 
 fileprivate enum Layout {
@@ -53,6 +56,7 @@ final class MovieListViewController: UIViewController {
     }()
     
     private lazy var emptyView = EmptyView()
+    
     private lazy var errorView: UIView = {
         let view = ErrorView()
         view.delegate = self
@@ -100,6 +104,18 @@ extension MovieListViewController: ViewConfiguration {
             loadingView.topAnchor.constraint(equalTo: view.safeAreaLayoutGuide.topAnchor),
             loadingView.bottomAnchor.constraint(equalTo: view.safeAreaLayoutGuide.bottomAnchor)
         ])
+        NSLayoutConstraint.activate([
+            emptyView.leadingAnchor.constraint(equalTo: view.leadingAnchor),
+            emptyView.trailingAnchor.constraint(equalTo: view.trailingAnchor),
+            emptyView.topAnchor.constraint(equalTo: view.safeAreaLayoutGuide.topAnchor),
+            emptyView.bottomAnchor.constraint(equalTo: view.safeAreaLayoutGuide.bottomAnchor)
+        ])
+        NSLayoutConstraint.activate([
+            errorView.leadingAnchor.constraint(equalTo: view.leadingAnchor),
+            errorView.trailingAnchor.constraint(equalTo: view.trailingAnchor),
+            errorView.topAnchor.constraint(equalTo: view.safeAreaLayoutGuide.topAnchor),
+            errorView.bottomAnchor.constraint(equalTo: view.safeAreaLayoutGuide.bottomAnchor)
+        ])
     }
     
     func configureViews() {
@@ -120,10 +136,6 @@ private extension MovieListViewController {
         navigationItem.hidesSearchBarWhenScrolling = false
         definesPresentationContext = true
     }
-    
-    func shouldLoadNextPage(row: Int) -> Bool {
-        row == searchDataSource.endIndex - 1 && totalResults > searchDataSource.count
-    }
 }
 
 
@@ -136,21 +148,27 @@ extension MovieListViewController: UITableViewDataSource {
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         guard let cell = tableView.dequeueReusableCell(withIdentifier: MovieViewCell.identifier) as? MovieViewCell
         else { return .init() }
+        guard indexPath.row != searchDataSource.endIndex else {
+            cell.activityIndicator.startAnimating()
+            return cell
+        }
         cell.setup(searchItem: searchDataSource[indexPath.row])
         return cell
     }
     
     func tableView(_ tableView: UITableView, viewForHeaderInSection section: Int) -> UIView? {
-        let view = MovieViewHeader()
-        view.display(totalResults: totalResults)
-        return view
+        let viewHeader = MovieViewHeader()
+        viewHeader.display(totalResults: totalResults)
+        return viewHeader
     }
     
     func tableView(_ tableView: UITableView, willDisplay cell: UITableViewCell, forRowAt indexPath: IndexPath) {
-        guard shouldLoadNextPage(row: indexPath.row) else { return }
-        interactor.loadNextPage()
+        guard let cell = tableView.dequeueReusableCell(withIdentifier: MovieViewCell.identifier) as? MovieViewCell
+        else { return }
+        interactor.loadNextPage(row: indexPath.row, loadingCellDelegate: cell)
     }
 }
+
 
 // MARK: - UITableViewDelegate
 extension MovieListViewController: UITableViewDelegate {
@@ -158,6 +176,7 @@ extension MovieListViewController: UITableViewDelegate {
         interactor.didSelect(searchItem: searchDataSource[indexPath.row])
     }
 }
+
 
 // MARK: - UISearchBarDelegate
 extension MovieListViewController: UISearchBarDelegate {
@@ -170,34 +189,55 @@ extension MovieListViewController: UISearchBarDelegate {
     func searchBarCancelButtonClicked(_ searchBar: UISearchBar) { }
 }
 
+
 // MARK: - MovieListDisplaying
 extension MovieListViewController: MovieListDisplaying {
-    func startLoading() {
-        loadingView.startAnimating()
-    }
-    
     func displayLoading() {
         loadingView.isHidden = false
-    }
-    
-    func stopLoading() {
-        loadingView.stopAnimating()
+        view.bringSubviewToFront(loadingView)
+        loadingView.startAnimating()
     }
     
     func hideLoading() {
         loadingView.isHidden = true
+        loadingView.stopAnimating()
     }
     
     func display(movieList: MovieListResponse) {
+        searchResultTable.isHidden = false
+        view.bringSubviewToFront(searchResultTable)
         totalResults = movieList.totalResults
         searchDataSource.append(contentsOf: movieList.results)
         searchResultTable.reloadData()
     }
     
-    func displaySearchResponse(shouldDisplay: Bool) {
-        searchResultTable.isHidden = !shouldDisplay
+    func hideMovieList() {
+        searchResultTable.isHidden = true
+    }
+    
+    func displayEmpty() {
+        view.bringSubviewToFront(emptyView)
+        emptyView.isHidden = false
+    }
+    
+    func hideEmpty() {
+        emptyView.isHidden = true
+    }
+    
+    func displayError() {
+        view.bringSubviewToFront(errorView)
+        errorView.isHidden = false
+    }
+    
+    func hideError() {
+        errorView.isHidden = true
+    }
+    
+    func displayErrorToast() {
+        
     }
 }
+
 
 // MARK: - ErrorViewDelegate
 extension MovieListViewController: ErrorViewDelegate {

@@ -15,6 +15,7 @@ enum Strings {
         static let tertiaryText = "clr_tertiary_text"
         static let transparentBackground = "clr_transparent_background"
         static let linkText = "clr_link_text"
+        static let backButton = "clr_back_button"
     }
     
     enum Placeholder {
@@ -27,6 +28,7 @@ enum Strings {
     
     enum LocalizableKeys {
         static let loadError = "loadError"
+        static let locale = "locale"
         
         enum Search {
             static let placeholder = "search.placeholder"

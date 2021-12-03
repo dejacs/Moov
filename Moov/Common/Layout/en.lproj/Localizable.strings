@@ -5,6 +5,7 @@
   Created by Jade Silveira on 01/12/21.
   
 */
+"locale" = "en-US";
 "loadError" = "Unable to load data";
 
 "search.placeholder" = "Search movies";

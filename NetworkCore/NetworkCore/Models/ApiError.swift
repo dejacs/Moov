@@ -12,6 +12,7 @@ public enum ApiError: Error, Equatable {
     case server(error: Error)
     case nilData
     case jsonParse
+    case imageParse
     case generic
     
     public static func == (lhs: ApiError, rhs: ApiError) -> Bool {
@@ -20,6 +21,7 @@ public enum ApiError: Error, Equatable {
             (.nilResponse, .nilResponse),
             (.nilData, .nilData),
             (.jsonParse, .jsonParse),
+            (.imageParse, imageParse),
             (.generic, .generic),
             (.server, server):
             return true

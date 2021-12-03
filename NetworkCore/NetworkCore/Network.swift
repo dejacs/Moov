@@ -6,6 +6,7 @@
 //
 
 import Foundation
+import UIKit
 
 public protocol Networking {
     func fetchData<T: Decodable>(
@@ -13,6 +14,10 @@ public protocol Networking {
         resultType: T.Type,
         decodingStrategy: JSONDecoder.KeyDecodingStrategy,
         completion: @escaping (Result<T, ApiError>) -> Void
+    )
+    func fetchImage(
+        with endpoint: EndpointProtocol,
+        completion: @escaping (Result<UIImage, ApiError>) -> Void
     )
 }
 
@@ -52,6 +57,34 @@ public final class Network: Networking {
                     return
                 }
                 completion(.success(unwrappedDecodedData))
+            }
+        }
+    }
+    
+    public func fetchImage(
+        with endpoint: EndpointProtocol,
+        completion: @escaping (Result<UIImage, ApiError>) -> Void
+    ) {
+        guard let url = URL(string: endpoint.urlText) else {
+            completion(.failure(.urlParse))
+            return
+        }
+        
+        session.makeRequest(with: url) { data, response, error in
+            self.queue.callAsync {
+                if let hasError = self.verifyError(data: data, response: response, error: error) {
+                    completion(.failure(hasError))
+                    return
+                }
+                guard let jsonData = data else {
+                    completion(.failure(.nilData))
+                    return
+                }
+                guard let parsedImage = UIImage(data: jsonData) else {
+                    completion(.failure(.imageParse))
+                    return
+                }
+                completion(.success(parsedImage))
             }
         }
     }

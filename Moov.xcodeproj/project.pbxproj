@@ -10,6 +10,8 @@
 		0B3BEA58B0BCB63B8E0B866E /* Pods_MoovTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 841863F8833C02414C1801AF /* Pods_MoovTests.framework */; };
 		149307419309492D654B435C /* Pods_Moov_MoovUITests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = EB9A066D2580A9954AEAC937 /* Pods_Moov_MoovUITests.framework */; };
 		1D0F0DBF275901D3009D649E /* NetworkCore.framework in Copy Frameworks */ = {isa = PBXBuildFile; fileRef = 1D0F0DBE2759018A009D649E /* NetworkCore.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
+		1D0F0DD82759395C009D649E /* SearchControl.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1D0F0DD72759395C009D649E /* SearchControl.swift */; };
+		1D1E5C122759A55D00D0F893 /* UIImageView+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1D1E5C112759A55D00D0F893 /* UIImageView+Extension.swift */; };
 		1DA8CEED2758155E00E6FD42 /* ViewConfiguration.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1DA8CEEC2758155E00E6FD42 /* ViewConfiguration.swift */; };
 		1DA8CEEF2758157A00E6FD42 /* Strings.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1DA8CEEE2758157A00E6FD42 /* Strings.swift */; };
 		1DA8CEF12758159C00E6FD42 /* LayoutDefaults.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1DA8CEF02758159C00E6FD42 /* LayoutDefaults.swift */; };
@@ -88,6 +90,8 @@
 		15DC92836CCD015A7CA3165A /* Pods_Moov.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Moov.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		1AE7A2245A4C0F73927257B9 /* Pods-MoovTests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-MoovTests.release.xcconfig"; path = "Target Support Files/Pods-MoovTests/Pods-MoovTests.release.xcconfig"; sourceTree = "<group>"; };
 		1D0F0DB92759018A009D649E /* NetworkCore.xcodeproj */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.pb-project"; name = NetworkCore.xcodeproj; path = NetworkCore/NetworkCore.xcodeproj; sourceTree = "<group>"; };
+		1D0F0DD72759395C009D649E /* SearchControl.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchControl.swift; sourceTree = "<group>"; };
+		1D1E5C112759A55D00D0F893 /* UIImageView+Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIImageView+Extension.swift"; sourceTree = "<group>"; };
 		1DA8CEEC2758155E00E6FD42 /* ViewConfiguration.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewConfiguration.swift; sourceTree = "<group>"; };
 		1DA8CEEE2758157A00E6FD42 /* Strings.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Strings.swift; sourceTree = "<group>"; };
 		1DA8CEF02758159C00E6FD42 /* LayoutDefaults.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LayoutDefaults.swift; sourceTree = "<group>"; };
@@ -188,6 +192,8 @@
 				1DA8CEEE2758157A00E6FD42 /* Strings.swift */,
 				1DA8CEEC2758155E00E6FD42 /* ViewConfiguration.swift */,
 				1DA8CEF02758159C00E6FD42 /* LayoutDefaults.swift */,
+				1D0F0DD72759395C009D649E /* SearchControl.swift */,
+				1D1E5C112759A55D00D0F893 /* UIImageView+Extension.swift */,
 			);
 			path = Layout;
 			sourceTree = "<group>";
@@ -587,6 +593,8 @@
 				1DA8CFC72758549600E6FD42 /* MovieListResponse.swift in Sources */,
 				1DF340DE2757FD1200FC5F64 /* MovieDetailsFactory.swift in Sources */,
 				1DF340D82757F5F600FC5F64 /* MovieListCoordinator.swift in Sources */,
+				1D0F0DD82759395C009D649E /* SearchControl.swift in Sources */,
+				1D1E5C122759A55D00D0F893 /* UIImageView+Extension.swift in Sources */,
 				1DF340D62757F56100FC5F64 /* MainCoordinator.swift in Sources */,
 				1DF340CC2757F33400FC5F64 /* MovieDetailsViewController.swift in Sources */,
 				1DA8CFCF2758627300E6FD42 /* MovieDetailsService.swift in Sources */,

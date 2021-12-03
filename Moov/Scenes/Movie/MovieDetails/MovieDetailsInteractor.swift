@@ -5,6 +5,8 @@
 //  Created by Jade Silveira on 01/12/21.
 //
 
+import Foundation
+
 protocol MovieDetailsInteracting {
     func fetchMovieDetails()
 }
@@ -23,7 +25,7 @@ final class MovieDetailsInteractor: MovieDetailsInteracting {
     }
     
     func fetchMovieDetails() {
-        self.presenter.presentLoading()
+        presenter.presentLoading()
         
         service.search(movieId: movieId) { [weak self] result in
             guard let self = self else { return }
@@ -31,9 +33,9 @@ final class MovieDetailsInteractor: MovieDetailsInteracting {
             
             switch result {
             case .success(let movie):
-                print("success")
+                self.presenter.present(movie: movie)
             case .failure:
-                print("failure")
+                self.presenter.presentErrorView()
             }
         }
     }

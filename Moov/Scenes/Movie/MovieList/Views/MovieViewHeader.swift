@@ -19,6 +19,7 @@ final class MovieViewHeader: UIView {
         label.font = label.font.withSize(LayoutDefaults.FontSize.base01)
         label.textColor = .init(named: Strings.Color.secondaryText)
         label.numberOfLines = Layout.Label.numberOfLines
+        label.translatesAutoresizingMaskIntoConstraints = false
         return label
     }()
     

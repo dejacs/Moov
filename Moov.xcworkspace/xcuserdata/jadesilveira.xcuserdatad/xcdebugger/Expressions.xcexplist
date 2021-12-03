@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<VariablesViewState
+   version = "1.0">
+   <ContextStates>
+      <ContextState
+         contextName = "MovieListInteractor.loadNextPage(row:):MovieListInteractor.swift">
+         <PersistentStrings>
+            <PersistentString
+               value = "searchControl.page + 1 &lt;= searchControl.totalPages">
+            </PersistentString>
+         </PersistentStrings>
+      </ContextState>
+   </ContextStates>
+</VariablesViewState>
