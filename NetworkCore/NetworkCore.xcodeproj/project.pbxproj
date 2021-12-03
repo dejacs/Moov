@@ -19,6 +19,7 @@
 		1D0F0DD4275902A6009D649E /* DispatchQueue+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1D0F0DD1275902A6009D649E /* DispatchQueue+Extension.swift */; };
 		1D0F0DD5275902A6009D649E /* JSONDecoder+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1D0F0DD2275902A6009D649E /* JSONDecoder+Extension.swift */; };
 		1D0F0DD6275902A6009D649E /* URLSession+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1D0F0DD3275902A6009D649E /* URLSession+Extension.swift */; };
+		1D38FE03275AB71600284643 /* Enviroment.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1D38FE02275AB71600284643 /* Enviroment.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -35,6 +36,7 @@
 		1D0F0DD1275902A6009D649E /* DispatchQueue+Extension.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "DispatchQueue+Extension.swift"; sourceTree = "<group>"; };
 		1D0F0DD2275902A6009D649E /* JSONDecoder+Extension.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "JSONDecoder+Extension.swift"; sourceTree = "<group>"; };
 		1D0F0DD3275902A6009D649E /* URLSession+Extension.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "URLSession+Extension.swift"; sourceTree = "<group>"; };
+		1D38FE02275AB71600284643 /* Enviroment.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Enviroment.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -74,6 +76,7 @@
 				1D0F0DC027590217009D649E /* Extensions */,
 				1D0F0DAF2759011D009D649E /* NetworkCore.h */,
 				1D0F0DB02759011D009D649E /* NetworkCore.docc */,
+				1D38FE02275AB71600284643 /* Enviroment.swift */,
 			);
 			path = NetworkCore;
 			sourceTree = "<group>";
@@ -188,6 +191,7 @@
 			files = (
 				1D0F0DC527590287009D649E /* Network.swift in Sources */,
 				1D0F0DCE27590298009D649E /* DispatchQueueProtocol.swift in Sources */,
+				1D38FE03275AB71600284643 /* Enviroment.swift in Sources */,
 				1D0F0DB12759011D009D649E /* NetworkCore.docc in Sources */,
 				1D0F0DC927590290009D649E /* StatusCode.swift in Sources */,
 				1D0F0DD4275902A6009D649E /* DispatchQueue+Extension.swift in Sources */,

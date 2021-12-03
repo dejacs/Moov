@@ -13,7 +13,6 @@ protocol MovieListPresenting {
     func present(movieListResponse: MovieListResponse)
     func presentEmptyView()
     func presentErrorView()
-    func presentErrorToast()
 }
 
 final class MovieListPresenter: MovieListPresenting {
@@ -49,9 +48,5 @@ final class MovieListPresenter: MovieListPresenting {
         viewController?.hideMovieList()
         viewController?.hideLoading()
         viewController?.displayError()
-    }
-    
-    func presentErrorToast() {
-        viewController?.displayErrorToast()
     }
 }

@@ -17,7 +17,6 @@ protocol MovieListDisplaying: AnyObject {
     func displayError()
     func hideEmpty()
     func hideError()
-    func displayErrorToast()
 }
 
 fileprivate enum Layout {
@@ -28,10 +27,9 @@ fileprivate enum Layout {
 
 final class MovieListViewController: UIViewController {
     private lazy var loadingView: UIActivityIndicatorView = {
-        if #available(iOS 13.0, *) {
-            return .init(style: .large)
-        }
-        return .init(style: .medium)
+        let view = UIActivityIndicatorView(style: .large)
+        view.translatesAutoresizingMaskIntoConstraints = false
+        return view
     }()
     
     override var preferredStatusBarStyle: UIStatusBarStyle {
@@ -59,12 +57,18 @@ final class MovieListViewController: UIViewController {
         return tableView
     }()
     
-    private lazy var emptyView = EmptyView()
+    private lazy var emptyView: UIView = {
+        let view = EmptyView()
+        view.isHidden = true
+        view.translatesAutoresizingMaskIntoConstraints = false
+        return view
+    }()
     
     private lazy var errorView: UIView = {
         let view = ErrorView()
         view.delegate = self
         view.isHidden = true
+        view.translatesAutoresizingMaskIntoConstraints = false
         return view
     }()
     
@@ -132,7 +136,6 @@ extension MovieListViewController: ViewConfiguration {
         navigationController?.navigationItem.largeTitleDisplayMode = .always
         navigationController?.navigationBar.largeTitleTextAttributes = [.foregroundColor: UIColor(named: Strings.Color.navigationText) as Any]
         
-        emptyView.isHidden = true
         loadingView.isHidden = true
         setupSearchBar()
     }
@@ -157,7 +160,7 @@ extension MovieListViewController: UITableViewDataSource {
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         guard let cell = tableView.dequeueReusableCell(withIdentifier: MovieViewCell.identifier) as? MovieViewCell
         else { return .init() }
-        guard indexPath.row != searchDataSource.endIndex else {
+        guard indexPath.row != searchDataSource.endIndex, searchDataSource.indices.contains(indexPath.row) else {
             cell.activityIndicator.startAnimating()
             return cell
         }
@@ -191,7 +194,8 @@ extension MovieListViewController: UITableViewDelegate {
 extension MovieListViewController: UISearchBarDelegate {
     func searchBarSearchButtonClicked(_ searchBar: UISearchBar) {
         guard let searchText = searchBar.text else { return }
-        searchDataSource = []
+        searchDataSource.removeAll()
+        searchResultTable.reloadData()
         interactor.search(by: searchText)
     }
     
@@ -241,16 +245,12 @@ extension MovieListViewController: MovieListDisplaying {
     func hideError() {
         errorView.isHidden = true
     }
-    
-    func displayErrorToast() {
-        
-    }
 }
 
 
 // MARK: - ErrorViewDelegate
 extension MovieListViewController: ErrorViewDelegate {
     func didTapButton() {
-        interactor.search()
+        interactor.fetchDailyTrendingMovieList()
     }
 }

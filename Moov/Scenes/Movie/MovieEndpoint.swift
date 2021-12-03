@@ -18,22 +18,23 @@ enum MovieEndpoint: EndpointProtocol {
     var urlText: String {
         let apiKey = "[YOUR API KEY HERE]"
         let locale = NSLocalizedString(Strings.LocalizableKeys.locale, comment: "")
+        guard let host = Enviroment.Host.api, let imageHost = Enviroment.Host.imageApi else { return "" }
         
         switch self {
         case .trendingDaily:
-            return "https://api.themoviedb.org/3/trending/movie/day?api_key=\(apiKey)&language=\(locale)"
+            return "\(host)/trending/movie/day?api_key=\(apiKey)&language=\(locale)"
             
         case .trendingWeekly:
-            return "https://api.themoviedb.org/3/trending/movie/week?api_key=\(apiKey)&language=\(locale)"
+            return "\(host)/trending/movie/week?api_key=\(apiKey)&language=\(locale)"
             
         case .searchMovieId(let id):
-            return "https://api.themoviedb.org/3/movie/\(id)?api_key=\(apiKey)&language=\(locale)"
+            return "\(host)/movie/\(id)?api_key=\(apiKey)&language=\(locale)"
             
         case let .searchText(text, page):
-            return "https://api.themoviedb.org/3/search/movie?api_key=\(apiKey)&language=\(locale)&query=\(text)&page=\(page)"
+            return "\(host)/search/movie?api_key=\(apiKey)&language=\(locale)&query=\(text)&page=\(page)"
             
         case .downloadImage(let pathSufix):
-            return "https://image.tmdb.org/t/p/w500\(pathSufix)"
+            return imageHost + pathSufix
         }
     }
 }

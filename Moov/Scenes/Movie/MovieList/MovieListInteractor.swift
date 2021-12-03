@@ -56,6 +56,7 @@ final class MovieListInteractor: MovieListInteracting {
         guard !isFetchInProgress else { return }
         presenter.presentLoading()
         isFetchInProgress = true
+        searchControl.page = 1
         
         service.search(movieText: text, page: searchControl.page) { [weak self] result in
             guard let self = self else { return }
@@ -78,11 +79,7 @@ final class MovieListInteractor: MovieListInteracting {
     }
     
     func loadNextPage(row: Int, loadingCellDelegate: LoadingCellDelegate) {
-        guard !searchControl.text.isEmpty,
-              searchControl.page < searchControl.totalPages - 1,
-              searchDataSource.endIndex - 1 == row,
-              !isFetchInProgress
-        else { return }
+        guard shouldLoadNextPage(row: row) else { return }
         searchControl.page += 1
         isFetchInProgress = true
         loadingCellDelegate.displayLoading()
@@ -97,17 +94,24 @@ final class MovieListInteractor: MovieListInteracting {
                 return
                 
             case .success(let movieList):
-                self.searchDataSource = movieList.results
+                self.searchDataSource.append(contentsOf: movieList.results)
                 self.searchControl = SearchControl(text: self.searchControl.text, movieList: movieList)
                 self.presenter.present(movieListResponse: movieList)
                 
             case .failure:
-                self.presenter.presentErrorToast()
+                return
             }
         }
     }
     
     func didSelect(searchItem: MovieResponse) {
         coordinator.navigateToMovieDetails(movieId: searchItem.id)
+    }
+    
+    private func shouldLoadNextPage(row: Int) -> Bool {
+        !searchControl.text.isEmpty &&
+        searchControl.page < searchControl.totalPages - 1 &&
+        searchDataSource.endIndex - 1 == row &&
+        !isFetchInProgress
     }
 }

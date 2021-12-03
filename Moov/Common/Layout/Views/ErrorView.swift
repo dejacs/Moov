@@ -51,6 +51,7 @@ final class ErrorView: UIView {
     
     private lazy var tryAgainButton: UIButton = {
         let button = UIButton()
+        button.translatesAutoresizingMaskIntoConstraints = false
         button.setTitle(NSLocalizedString(Strings.LocalizableKeys.Search.Error.button, comment: ""), for: .normal)
         button.setTitleColor(.init(named: Strings.Color.linkText), for: .normal)
         button.addTarget(self, action: #selector(didTapTryAgainButton), for: .touchUpInside)

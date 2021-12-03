@@ -3,6 +3,14 @@
    version = "1.0">
    <ContextStates>
       <ContextState
+         contextName = "MovieListInteractor.loadNextPage(row:loadingCellDelegate:):MovieListInteractor.swift">
+         <PersistentStrings>
+            <PersistentString
+               value = "!searchControl.text.isEmpty &amp;&amp; searchControl.page &lt; searchControl.totalPages - 1 &amp;&amp; searchDataSource.endIndex - 1 == row &amp;&amp; !isFetchInProgress">
+            </PersistentString>
+         </PersistentStrings>
+      </ContextState>
+      <ContextState
          contextName = "MovieListInteractor.loadNextPage(row:):MovieListInteractor.swift">
          <PersistentStrings>
             <PersistentString

@@ -130,10 +130,15 @@ extension MovieViewCell: ViewConfiguration {
 
 extension MovieViewCell: LoadingCellDelegate {
     func displayLoading() {
-        activityIndicator.startAnimating()
+        DispatchQueue.main.async {
+            self.addSubview(self.activityIndicator)
+            self.activityIndicator.startAnimating()
+        }
     }
     func hideLoading() {
-        activityIndicator.stopAnimating()
-        activityIndicator.removeFromSuperview()
+        DispatchQueue.main.async {
+            self.activityIndicator.stopAnimating()
+            self.activityIndicator.removeFromSuperview()
+        }
     }
 }
