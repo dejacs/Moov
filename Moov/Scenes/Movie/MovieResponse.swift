@@ -7,7 +7,7 @@
 
 import Foundation
 
-struct MovieResponse: Decodable {
+struct MovieResponse: Decodable, Equatable {
     let id: Int
     let posterPath: String?
     let title: String

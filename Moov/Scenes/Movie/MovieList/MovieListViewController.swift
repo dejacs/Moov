@@ -91,6 +91,8 @@ final class MovieListViewController: UIViewController {
     }
 }
 
+
+// MARK: - ViewConfiguration
 extension MovieListViewController: ViewConfiguration {
     func buildViewHierarchy() {
         view.addSubview(loadingView)
@@ -161,7 +163,6 @@ extension MovieListViewController: UITableViewDataSource {
         guard let cell = tableView.dequeueReusableCell(withIdentifier: MovieViewCell.identifier) as? MovieViewCell
         else { return .init() }
         guard indexPath.row != searchDataSource.endIndex, searchDataSource.indices.contains(indexPath.row) else {
-            cell.activityIndicator.startAnimating()
             return cell
         }
         cell.setup(searchItem: searchDataSource[indexPath.row])

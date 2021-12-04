@@ -27,20 +27,11 @@ fileprivate enum Layout {
 class MovieViewCell: UITableViewCell {
     static let identifier = Layout.Cell.identifier
     
-    var activityIndicator: UIActivityIndicatorView {
-        let activityIndicator = UIActivityIndicatorView()
-        activityIndicator.hidesWhenStopped = true
-        activityIndicator.translatesAutoresizingMaskIntoConstraints = false
-        
-        addSubview(activityIndicator)
-        
-        NSLayoutConstraint.activate([
-            activityIndicator.centerYAnchor.constraint(equalTo: centerYAnchor),
-            activityIndicator.centerXAnchor.constraint(equalTo: centerXAnchor)
-        ])
-        
-        return activityIndicator
-    }
+    private lazy var loadingView: UIActivityIndicatorView = {
+        let view = UIActivityIndicatorView(style: .large)
+        view.translatesAutoresizingMaskIntoConstraints = false
+        return view
+    }()
     
     private lazy var posterImageView: UIImageView = {
         let imageView = UIImageView()
@@ -78,8 +69,8 @@ class MovieViewCell: UITableViewCell {
     }
     
     override func prepareForReuse() {
-        activityIndicator.stopAnimating()
-        activityIndicator.removeFromSuperview()
+        loadingView.stopAnimating()
+        loadingView.isHidden = true
         titleLabel.text = nil
         overviewLabel.text = nil
         posterImageView.image = nil
@@ -98,6 +89,7 @@ extension MovieViewCell: ViewConfiguration {
         addSubview(posterImageView)
         addSubview(titleLabel)
         addSubview(overviewLabel)
+        addSubview(loadingView)
     }
     
     func setupConstraints() {
@@ -120,6 +112,11 @@ extension MovieViewCell: ViewConfiguration {
             overviewLabel.trailingAnchor.constraint(lessThanOrEqualTo: trailingAnchor, constant: -LayoutDefaults.View.margin01),
             overviewLabel.bottomAnchor.constraint(lessThanOrEqualTo: bottomAnchor, constant: LayoutDefaults.View.margin01)
         ])
+        NSLayoutConstraint.activate([
+            loadingView.topAnchor.constraint(equalTo: bottomAnchor, constant: LayoutDefaults.View.margin01),
+            loadingView.centerXAnchor.constraint(equalTo: centerXAnchor),
+            loadingView.bottomAnchor.constraint(equalTo: bottomAnchor, constant: -LayoutDefaults.View.margin01)
+        ])
     }
     
     func configureViews() {
@@ -130,15 +127,12 @@ extension MovieViewCell: ViewConfiguration {
 
 extension MovieViewCell: LoadingCellDelegate {
     func displayLoading() {
-        DispatchQueue.main.async {
-            self.addSubview(self.activityIndicator)
-            self.activityIndicator.startAnimating()
-        }
+        loadingView.startAnimating()
+        loadingView.isHidden = false
+        bringSubviewToFront(loadingView)
     }
     func hideLoading() {
-        DispatchQueue.main.async {
-            self.activityIndicator.stopAnimating()
-            self.activityIndicator.removeFromSuperview()
-        }
+        loadingView.stopAnimating()
+        loadingView.isHidden = true
     }
 }

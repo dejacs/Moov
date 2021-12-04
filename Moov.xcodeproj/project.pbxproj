@@ -11,6 +11,9 @@
 		149307419309492D654B435C /* Pods_Moov_MoovUITests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = EB9A066D2580A9954AEAC937 /* Pods_Moov_MoovUITests.framework */; };
 		1D0F0DBF275901D3009D649E /* NetworkCore.framework in Copy Frameworks */ = {isa = PBXBuildFile; fileRef = 1D0F0DBE2759018A009D649E /* NetworkCore.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
 		1D0F0DD82759395C009D649E /* SearchControl.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1D0F0DD72759395C009D649E /* SearchControl.swift */; };
+		1D198D49275B0BF400E05FAB /* NavigationControllerSpy.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1D198D48275B0BF400E05FAB /* NavigationControllerSpy.swift */; };
+		1D198D4B275B0E6F00E05FAB /* MovieListResponse+Fixture.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1D198D4A275B0E6F00E05FAB /* MovieListResponse+Fixture.swift */; };
+		1D198D4D275B0F2200E05FAB /* MovieResponse+Fixture.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1D198D4C275B0F2200E05FAB /* MovieResponse+Fixture.swift */; };
 		1D1E5C122759A55D00D0F893 /* UIImageView+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1D1E5C112759A55D00D0F893 /* UIImageView+Extension.swift */; };
 		1DA8CEED2758155E00E6FD42 /* ViewConfiguration.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1DA8CEEC2758155E00E6FD42 /* ViewConfiguration.swift */; };
 		1DA8CEEF2758157A00E6FD42 /* Strings.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1DA8CEEE2758157A00E6FD42 /* Strings.swift */; };
@@ -30,7 +33,7 @@
 		1DF340902757EC6700FC5F64 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1DF3408F2757EC6700FC5F64 /* SceneDelegate.swift */; };
 		1DF3409A2757EC6A00FC5F64 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 1DF340992757EC6A00FC5F64 /* Assets.xcassets */; };
 		1DF3409D2757EC6A00FC5F64 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 1DF3409B2757EC6A00FC5F64 /* LaunchScreen.storyboard */; };
-		1DF340A82757EC6A00FC5F64 /* MoovTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1DF340A72757EC6A00FC5F64 /* MoovTests.swift */; };
+		1DF340A82757EC6A00FC5F64 /* MovieListInteractorTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1DF340A72757EC6A00FC5F64 /* MovieListInteractorTests.swift */; };
 		1DF340B22757EC6A00FC5F64 /* MoovUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1DF340B12757EC6A00FC5F64 /* MoovUITests.swift */; };
 		1DF340B42757EC6A00FC5F64 /* MoovUITestsLaunchTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1DF340B32757EC6A00FC5F64 /* MoovUITestsLaunchTests.swift */; };
 		1DF340C62757F11300FC5F64 /* MovieListViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1DF340C52757F11300FC5F64 /* MovieListViewController.swift */; };
@@ -55,6 +58,13 @@
 			proxyType = 2;
 			remoteGlobalIDString = 1D0F0DAC2759011D009D649E;
 			remoteInfo = NetworkCore;
+		};
+		1D198D46275B098500E05FAB /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 1D0F0DB92759018A009D649E /* NetworkCore.xcodeproj */;
+			proxyType = 2;
+			remoteGlobalIDString = 1D198D3B275B01D400E05FAB;
+			remoteInfo = NetworkCoreTests;
 		};
 		1DF340A42757EC6A00FC5F64 /* PBXContainerItemProxy */ = {
 			isa = PBXContainerItemProxy;
@@ -91,6 +101,9 @@
 		1AE7A2245A4C0F73927257B9 /* Pods-MoovTests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-MoovTests.release.xcconfig"; path = "Target Support Files/Pods-MoovTests/Pods-MoovTests.release.xcconfig"; sourceTree = "<group>"; };
 		1D0F0DB92759018A009D649E /* NetworkCore.xcodeproj */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.pb-project"; name = NetworkCore.xcodeproj; path = NetworkCore/NetworkCore.xcodeproj; sourceTree = "<group>"; };
 		1D0F0DD72759395C009D649E /* SearchControl.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchControl.swift; sourceTree = "<group>"; };
+		1D198D48275B0BF400E05FAB /* NavigationControllerSpy.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NavigationControllerSpy.swift; sourceTree = "<group>"; };
+		1D198D4A275B0E6F00E05FAB /* MovieListResponse+Fixture.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "MovieListResponse+Fixture.swift"; sourceTree = "<group>"; };
+		1D198D4C275B0F2200E05FAB /* MovieResponse+Fixture.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "MovieResponse+Fixture.swift"; sourceTree = "<group>"; };
 		1D1E5C112759A55D00D0F893 /* UIImageView+Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIImageView+Extension.swift"; sourceTree = "<group>"; };
 		1DA8CEEC2758155E00E6FD42 /* ViewConfiguration.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewConfiguration.swift; sourceTree = "<group>"; };
 		1DA8CEEE2758157A00E6FD42 /* Strings.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Strings.swift; sourceTree = "<group>"; };
@@ -115,7 +128,7 @@
 		1DF3409C2757EC6A00FC5F64 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		1DF3409E2757EC6A00FC5F64 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		1DF340A32757EC6A00FC5F64 /* MoovTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = MoovTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
-		1DF340A72757EC6A00FC5F64 /* MoovTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MoovTests.swift; sourceTree = "<group>"; };
+		1DF340A72757EC6A00FC5F64 /* MovieListInteractorTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MovieListInteractorTests.swift; sourceTree = "<group>"; };
 		1DF340AD2757EC6A00FC5F64 /* MoovUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = MoovUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		1DF340B12757EC6A00FC5F64 /* MoovUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MoovUITests.swift; sourceTree = "<group>"; };
 		1DF340B32757EC6A00FC5F64 /* MoovUITestsLaunchTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MoovUITestsLaunchTests.swift; sourceTree = "<group>"; };
@@ -180,6 +193,7 @@
 			isa = PBXGroup;
 			children = (
 				1D0F0DBE2759018A009D649E /* NetworkCore.framework */,
+				1D198D47275B098500E05FAB /* NetworkCoreTests.xctest */,
 			);
 			name = Products;
 			sourceTree = "<group>";
@@ -267,7 +281,10 @@
 		1DF340A62757EC6A00FC5F64 /* MoovTests */ = {
 			isa = PBXGroup;
 			children = (
-				1DF340A72757EC6A00FC5F64 /* MoovTests.swift */,
+				1DF340A72757EC6A00FC5F64 /* MovieListInteractorTests.swift */,
+				1D198D48275B0BF400E05FAB /* NavigationControllerSpy.swift */,
+				1D198D4A275B0E6F00E05FAB /* MovieListResponse+Fixture.swift */,
+				1D198D4C275B0F2200E05FAB /* MovieResponse+Fixture.swift */,
 			);
 			path = MoovTests;
 			sourceTree = "<group>";
@@ -477,6 +494,13 @@
 			remoteRef = 1D0F0DBD2759018A009D649E /* PBXContainerItemProxy */;
 			sourceTree = BUILT_PRODUCTS_DIR;
 		};
+		1D198D47275B098500E05FAB /* NetworkCoreTests.xctest */ = {
+			isa = PBXReferenceProxy;
+			fileType = wrapper.cfbundle;
+			path = NetworkCoreTests.xctest;
+			remoteRef = 1D198D46275B098500E05FAB /* PBXContainerItemProxy */;
+			sourceTree = BUILT_PRODUCTS_DIR;
+		};
 /* End PBXReferenceProxy section */
 
 /* Begin PBXResourcesBuildPhase section */
@@ -616,7 +640,10 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				1DF340A82757EC6A00FC5F64 /* MoovTests.swift in Sources */,
+				1D198D49275B0BF400E05FAB /* NavigationControllerSpy.swift in Sources */,
+				1DF340A82757EC6A00FC5F64 /* MovieListInteractorTests.swift in Sources */,
+				1D198D4B275B0E6F00E05FAB /* MovieListResponse+Fixture.swift in Sources */,
+				1D198D4D275B0F2200E05FAB /* MovieResponse+Fixture.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

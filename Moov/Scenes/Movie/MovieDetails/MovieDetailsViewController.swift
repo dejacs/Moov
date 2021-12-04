@@ -9,10 +9,11 @@ import UIKit
 
 protocol MovieDetailsDisplaying: AnyObject {
     func displayLoading()
-    func startLoading()
     func hideLoading()
-    func stopLoading()
     func display(movie: MovieResponse)
+    func hideMovie()
+    func displayError()
+    func hideError()
 }
 
 fileprivate enum Layout {
@@ -23,7 +24,9 @@ fileprivate enum Layout {
 
 final class MovieDetailsViewController: UIViewController {
     private lazy var loadingView: UIActivityIndicatorView = {
-        return .init(style: .large)
+        let view = UIActivityIndicatorView(style: .large)
+        view.translatesAutoresizingMaskIntoConstraints = false
+        return view
     }()
     
     override var preferredStatusBarStyle: UIStatusBarStyle {
@@ -64,6 +67,14 @@ final class MovieDetailsViewController: UIViewController {
         return label
     }()
     
+    private lazy var errorView: UIView = {
+        let view = ErrorView()
+        view.delegate = self
+        view.isHidden = true
+        view.translatesAutoresizingMaskIntoConstraints = false
+        return view
+    }()
+    
     private let interactor: MovieDetailsInteracting
     
     init(interactor: MovieDetailsInteracting) {
@@ -80,12 +91,15 @@ final class MovieDetailsViewController: UIViewController {
     }
 }
 
+// MARK: - ViewConfiguration
 extension MovieDetailsViewController: ViewConfiguration {
     func buildViewHierarchy() {
         view.addSubview(scrollView)
         scrollView.addSubview(posterImageView)
         scrollView.addSubview(titleLabel)
         scrollView.addSubview(overviewLabel)
+        view.addSubview(loadingView)
+        view.addSubview(errorView)
     }
     
     func setupConstraints() {
@@ -112,6 +126,18 @@ extension MovieDetailsViewController: ViewConfiguration {
             overviewLabel.trailingAnchor.constraint(lessThanOrEqualTo: scrollView.trailingAnchor, constant: -LayoutDefaults.View.margin01),
             overviewLabel.bottomAnchor.constraint(equalTo: scrollView.bottomAnchor, constant: -LayoutDefaults.View.margin01)
         ])
+        NSLayoutConstraint.activate([
+            loadingView.leadingAnchor.constraint(equalTo: view.leadingAnchor),
+            loadingView.trailingAnchor.constraint(equalTo: view.trailingAnchor),
+            loadingView.topAnchor.constraint(equalTo: view.safeAreaLayoutGuide.topAnchor),
+            loadingView.bottomAnchor.constraint(equalTo: view.safeAreaLayoutGuide.bottomAnchor)
+        ])
+        NSLayoutConstraint.activate([
+            errorView.leadingAnchor.constraint(equalTo: view.leadingAnchor),
+            errorView.trailingAnchor.constraint(equalTo: view.trailingAnchor),
+            errorView.topAnchor.constraint(equalTo: view.safeAreaLayoutGuide.topAnchor),
+            errorView.bottomAnchor.constraint(equalTo: view.safeAreaLayoutGuide.bottomAnchor)
+        ])
     }
     
     func configureViews() {
@@ -122,27 +148,42 @@ extension MovieDetailsViewController: ViewConfiguration {
     }
 }
 
+// MARK: - MovieDetailsDisplaying
 extension MovieDetailsViewController: MovieDetailsDisplaying {
-    func startLoading() {
-        loadingView.startAnimating()
-    }
-    
     func displayLoading() {
         loadingView.isHidden = false
-    }
-    
-    func stopLoading() {
-        loadingView.stopAnimating()
+        loadingView.startAnimating()
     }
     
     func hideLoading() {
         loadingView.isHidden = true
+        loadingView.stopAnimating()
     }
     
     func display(movie: MovieResponse) {
+        scrollView.isHidden = false
         title = movie.title
         titleLabel.text = movie.title
         overviewLabel.text = movie.overview
         posterImageView.setImage(pathSufix: movie.posterPath)
+    }
+    
+    func hideMovie() {
+        scrollView.isHidden = true
+    }
+    
+    func displayError() {
+        errorView.isHidden = false
+    }
+    
+    func hideError() {
+        errorView.isHidden = true
+    }
+}
+
+// MARK: - ErrorViewDelegate
+extension MovieDetailsViewController: ErrorViewDelegate {
+    func didTapButton() {
+        interactor.fetchMovieDetails()
     }
 }

@@ -107,11 +107,16 @@ final class MovieListInteractor: MovieListInteracting {
     func didSelect(searchItem: MovieResponse) {
         coordinator.navigateToMovieDetails(movieId: searchItem.id)
     }
-    
-    private func shouldLoadNextPage(row: Int) -> Bool {
-        !searchControl.text.isEmpty &&
-        searchControl.page < searchControl.totalPages - 1 &&
-        searchDataSource.endIndex - 1 == row &&
-        !isFetchInProgress
+}
+
+
+// MARK: - Private methods
+private extension MovieListInteractor {
+    func shouldLoadNextPage(row: Int) -> Bool {
+        let isEmptySearch = searchControl.text.isEmpty
+        let isLastPage = searchControl.page == searchControl.totalPages - 1
+        let isLastIndex = searchDataSource.endIndex - 1 == row
+        
+        return !isEmptySearch && !isLastPage && isLastIndex && !isFetchInProgress
     }
 }
