@@ -16,6 +16,7 @@ final class CustomSearchController: UISearchController {
         obscuresBackgroundDuringPresentation = false
         searchBar.placeholder = NSLocalizedString(Strings.LocalizableKeys.Search.placeholder, comment: "")
         searchBar.backgroundColor = .init(named: Strings.Color.branding)
+        searchBar.accessibilityIdentifier = "searchMovieBar"
         searchBar.delegate = delegate
         
         if let searchBarContainer = searchBar.subviews.first?.subviews[1],

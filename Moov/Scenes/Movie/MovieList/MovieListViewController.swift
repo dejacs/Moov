@@ -49,6 +49,7 @@ final class MovieListViewController: UIViewController {
         tableView.sectionHeaderHeight = UITableView.automaticDimension
         tableView.estimatedRowHeight = 70
         tableView.isScrollEnabled = true
+        tableView.accessibilityIdentifier = "searchResultTable"
         tableView.separatorStyle = .singleLine
         tableView.backgroundColor = .init(named: Strings.Color.primaryBackground)
         tableView.delegate = self
@@ -166,6 +167,7 @@ extension MovieListViewController: UITableViewDataSource {
             return cell
         }
         cell.setup(searchItem: searchDataSource[indexPath.row])
+        cell.accessibilityIdentifier = "movieCell"
         return cell
     }
     

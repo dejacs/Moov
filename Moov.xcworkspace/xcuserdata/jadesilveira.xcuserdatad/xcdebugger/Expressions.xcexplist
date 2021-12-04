@@ -3,6 +3,9 @@
    version = "1.0">
    <ContextStates>
       <ContextState
+         contextName = "closure #1 in MovieDetailsInteractor.fetchMovieDetails():MovieDetailsInteractor.swift">
+      </ContextState>
+      <ContextState
          contextName = "MovieListInteractor.loadNextPage(row:loadingCellDelegate:):MovieListInteractor.swift">
          <PersistentStrings>
             <PersistentString
@@ -11,18 +14,21 @@
          </PersistentStrings>
       </ContextState>
       <ContextState
-         contextName = "MovieListInteractor.loadNextPage(row:):MovieListInteractor.swift">
-         <PersistentStrings>
-            <PersistentString
-               value = "searchControl.page + 1 &lt;= searchControl.totalPages">
-            </PersistentString>
-         </PersistentStrings>
+         contextName = "MoovUITests.testSearchMovie():MoovUITests.swift">
       </ContextState>
       <ContextState
          contextName = "MovieDetailsViewController.configureViews():MovieDetailsViewController.swift">
          <PersistentStrings>
             <PersistentString
                value = "navigationController?.navigationBar.subviews.filter({ view in view.subviews.first(where: { view in view is UILabel }) != nil }) as? [UILabel]">
+            </PersistentString>
+         </PersistentStrings>
+      </ContextState>
+      <ContextState
+         contextName = "MovieListInteractor.loadNextPage(row:):MovieListInteractor.swift">
+         <PersistentStrings>
+            <PersistentString
+               value = "searchControl.page + 1 &lt;= searchControl.totalPages">
             </PersistentString>
          </PersistentStrings>
       </ContextState>

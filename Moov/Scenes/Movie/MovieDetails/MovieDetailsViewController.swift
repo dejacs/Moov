@@ -37,6 +37,7 @@ final class MovieDetailsViewController: UIViewController {
         let scrollView = UIScrollView()
         scrollView.translatesAutoresizingMaskIntoConstraints = false
         scrollView.backgroundColor = .clear
+        scrollView.accessibilityIdentifier = "movieDetailsScrollView"
         return scrollView
     }()
     
