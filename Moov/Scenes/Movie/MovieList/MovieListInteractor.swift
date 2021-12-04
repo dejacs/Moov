@@ -9,7 +9,7 @@ protocol MovieListInteracting {
     func fetchDailyTrendingMovieList()
     func search(by text: String)
     func loadNextPage(row: Int, loadingCellDelegate: LoadingCellDelegate)
-    func didSelect(searchItem: MovieResponse)
+    func goToMovieDetails(searchItem: MovieResponse)
 }
 
 extension MovieListInteracting {
@@ -104,7 +104,7 @@ final class MovieListInteractor: MovieListInteracting {
         }
     }
     
-    func didSelect(searchItem: MovieResponse) {
+    func goToMovieDetails(searchItem: MovieResponse) {
         coordinator.navigateToMovieDetails(movieId: searchItem.id)
     }
 }

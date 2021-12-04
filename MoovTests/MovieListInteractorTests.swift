@@ -107,8 +107,7 @@ private final class MovieListServiceMock: MovieListServicing {
 }
 
 final class MovieListInteractorTests: XCTestCase {
-    private let navigationControllerSpy = NavigationControllerSpy()
-    private lazy var coordinatorSpy = MovieListCoordinatorSpy(navigationController: navigationControllerSpy)
+    private lazy var coordinatorSpy = MovieListCoordinatorSpy(navigationController: NavigationControllerSpy())
     
     private let presenterSpy = MovieListPresenterSpy()
     private let serviceMock = MovieListServiceMock()
@@ -121,7 +120,7 @@ final class MovieListInteractorTests: XCTestCase {
         return interactor
     }()
     
-    func testFetchDailyTrendingMovieList_ShouldPresentTrendingMovieList() {
+    func testFetchDailyTrendingMovieList_WhenResultIsSuccess_ShouldPresentMovieList() {
         serviceMock.fetchDailyTrendingMovieListExpectedResult = .success(.fixture())
         sut.fetchDailyTrendingMovieList()
         
@@ -131,7 +130,7 @@ final class MovieListInteractorTests: XCTestCase {
         XCTAssertEqual(presenterSpy.presentMovieListResponseReceivedInvocation, .fixture())
     }
     
-    func testFetchDailyTrendingMovieList_ShouldPresentError() {
+    func testFetchDailyTrendingMovieList_WhenResultIsFailure_ShouldPresentError() {
         serviceMock.fetchDailyTrendingMovieListExpectedResult = .failure(.generic)
         sut.fetchDailyTrendingMovieList()
         
@@ -140,7 +139,7 @@ final class MovieListInteractorTests: XCTestCase {
         XCTAssertEqual(presenterSpy.presentErrorViewCallsCount, 1)
     }
     
-    func testSearchByText_ShouldPresentMovieList() {
+    func testSearchByText_WhenResultIsSuccessAndHasItems_ShouldPresentMovieList() {
         serviceMock.searchMovieTextExpectedResult = .success(.fixture())
         sut.search(by: "Test")
         
@@ -150,7 +149,7 @@ final class MovieListInteractorTests: XCTestCase {
         XCTAssertEqual(presenterSpy.presentMovieListResponseReceivedInvocation, .fixture())
     }
     
-    func testSearchByText_ShouldPresentEmpty() {
+    func testSearchByText_WhenResultIsSuccessAndItemsIsEmpty_ShouldPresentEmpty() {
         serviceMock.searchMovieTextExpectedResult = .success(.fixture(results: []))
         sut.search(by: "Test")
         
@@ -159,7 +158,7 @@ final class MovieListInteractorTests: XCTestCase {
         XCTAssertEqual(presenterSpy.presentEmptyViewCallsCount, 1)
     }
     
-    func testSearchByText_ShouldPresentError() {
+    func testSearchByText_WhenResultIsFailure_ShouldPresentError() {
         serviceMock.searchMovieTextExpectedResult = .failure(.generic)
         sut.search(by: "Test")
         
@@ -168,7 +167,7 @@ final class MovieListInteractorTests: XCTestCase {
         XCTAssertEqual(presenterSpy.presentErrorViewCallsCount, 1)
     }
     
-    func testLoadNextPage_ShouldPresentMoreCells() {
+    func testLoadNextPage_WhenSearchMovieRequestIsSuccessAndLoadNextPageRequestIsSuccessAndHasItems_ShouldPresentMoreCells() {
         let cellSpy = MovieCellSpy()
         serviceMock.searchMovieTextExpectedResult = .success(.fixture())
         sut.search(by: "Test")
@@ -180,7 +179,7 @@ final class MovieListInteractorTests: XCTestCase {
         XCTAssertEqual(presenterSpy.presentMovieListResponseReceivedInvocation, .fixture())
     }
     
-    func testLoadNextPage_ShouldDoNothing() {
+    func testLoadNextPage_WhenSearchMovieRequestIsSuccessAndLoadNextPageRequestIsSuccessAndEmpty_ShouldDoNothing() {
         let cellSpy = MovieCellSpy()
         serviceMock.searchMovieTextExpectedResult = .success(.fixture())
         sut.search(by: "Test")
@@ -192,7 +191,7 @@ final class MovieListInteractorTests: XCTestCase {
         XCTAssertEqual(presenterSpy.presentMovieListResponseCallsCount, 1)
     }
     
-    func testLoadNextPage__ShouldDoNothing() {
+    func testLoadNextPage_WhenSearchMovieRequestIsSuccessAndLoadNextPageRequestIsFailure_ShouldDoNothing() {
         let cellSpy = MovieCellSpy()
         serviceMock.searchMovieTextExpectedResult = .success(.fixture())
         sut.search(by: "Test")
@@ -202,5 +201,12 @@ final class MovieListInteractorTests: XCTestCase {
         XCTAssertEqual(cellSpy.displayLoadingCallsCount, 1)
         XCTAssertEqual(cellSpy.hideLoadingCallsCount, 1)
         XCTAssertEqual(presenterSpy.presentMovieListResponseCallsCount, 1)
+    }
+    
+    func testGoToMovieDetails_ShouldNavigateToMovieDetails() {
+        sut.goToMovieDetails(searchItem: .fixture())
+        
+        XCTAssertEqual(coordinatorSpy.navigateToMovieDetailsCallsCount, 1)
+        XCTAssertEqual(coordinatorSpy.navigateToMovieDetailsReceivedInvocation, MovieResponse.fixture().id)
     }
 }

@@ -186,7 +186,7 @@ extension MovieListViewController: UITableViewDataSource {
 // MARK: - UITableViewDelegate
 extension MovieListViewController: UITableViewDelegate {
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
-        interactor.didSelect(searchItem: searchDataSource[indexPath.row])
+        interactor.goToMovieDetails(searchItem: searchDataSource[indexPath.row])
     }
 }
 
