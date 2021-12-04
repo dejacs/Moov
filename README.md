@@ -6,6 +6,7 @@ Esse é um aplicativo sobre filmes e possui as seguintes funcionalidades até en
 - Busca por título do filme
 - Listagem do resultado da busca
 - Detalhamento do filme
+- Scroll infinito ao listar resultado da busca
 
 A api utilizada foi a famosa https://api.themoviedb.org/ e o aplicativo pode funcionar em inglês ou português.
 
