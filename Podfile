@@ -2,9 +2,27 @@ platform :ios, '13.0'
 
 use_frameworks!
 
+workspace 'Moov'
+
+# network_module
+def network_pods
+    # some pod
+end
+
+target 'NetworkCore' do
+  project 'NetworkCore/NetworkCore.project'
+  network_pods
+end
+
+
+# application
+def application_pods
+    network_pods
+end
+
 target 'Moov' do
   project 'Moov.project'
-  # Pods for Moov
+  application_pods
 
   target 'MoovTests' do
     inherit! :search_paths
@@ -14,5 +32,4 @@ target 'Moov' do
   target 'MoovUITests' do
     # Pods for testing
   end
-
 end
