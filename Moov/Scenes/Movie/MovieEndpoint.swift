@@ -8,7 +8,7 @@
 import Foundation
 import NetworkCore
 
-enum MovieEndpoint: EndpointProtocol {
+enum MovieEndpoint {
     case trendingDaily
     case trendingWeekly
     case searchMovieId(Int)
@@ -16,7 +16,7 @@ enum MovieEndpoint: EndpointProtocol {
     case downloadImage(pathSufix: String)
     
     var urlText: String {
-        let apiKey = "[YOUR API KEY HERE]"
+        let apiKey = "5725d89a6357e321ddfa9db44c0dfc27"
         let locale = NSLocalizedString(Strings.LocalizableKeys.locale, comment: "")
         guard let host = Enviroment.Host.api, let imageHost = Enviroment.Host.imageApi else { return "" }
         

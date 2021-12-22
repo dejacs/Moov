@@ -4,10 +4,10 @@
 <dict>
 	<key>EnviromentSettings</key>
 	<dict>
-		<key>IMAGE_HOST</key>
-		<string>$(IMAGE_HOST)</string>
 		<key>API_HOST</key>
 		<string>$(API_HOST)</string>
+		<key>IMAGE_HOST</key>
+		<string>$(IMAGE_HOST)</string>
 	</dict>
 	<key>UIApplicationSceneManifest</key>
 	<dict>

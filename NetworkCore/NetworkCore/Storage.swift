@@ -7,39 +7,35 @@
 
 import Foundation
 
-enum StorageKey: String {
-    case product
-}
-
 protocol Storaging {
-    func create<T: Encodable>(object: T, key: StorageKey) throws
-    func read<T: Decodable>(objectType: T.Type, key: StorageKey) throws -> T
-    func update<T: Encodable>(object: T, key: StorageKey) throws
-    func delete(key: StorageKey)
+    func create<T: Encodable>(object: T, key: String) throws
+    func read<T: Decodable>(objectType: T.Type, key: String) throws -> T
+    func update<T: Encodable>(object: T, key: String) throws
+    func delete(key: String)
 }
 
 final class Storage: Storaging {
-    private let defaults: UserDefaults
+    private let defaults: UserDefaultsProtocol
     
-    init(defaults: UserDefaults = UserDefaults.standard) {
+    init(defaults: UserDefaultsProtocol = UserDefaults.standard) {
         self.defaults = defaults
     }
     
-    func create<T: Encodable>(object: T, key: StorageKey) throws {
+    func create<T: Encodable>(object: T, key: String) throws {
         let data = try JSONEncoder().encode(object)
-        defaults.set(data, forKey: key.rawValue)
+        defaults.set(data, forKey: key)
     }
     
-    func read<T: Decodable>(objectType: T.Type, key: StorageKey) throws -> T {
-        guard let data = defaults.object(forKey: key.rawValue) as? Data else { throw ApiError.nilData }
+    func read<T: Decodable>(objectType: T.Type, key: String) throws -> T {
+        guard let data = defaults.object(forKey: key) as? Data else { throw ApiError.nilData }
         return try JSONDecoder().decode(T.self, from: data)
     }
     
-    func update<T: Encodable>(object: T, key: StorageKey) throws {
+    func update<T: Encodable>(object: T, key: String) throws {
         try create(object: object, key: key)
     }
     
-    func delete(key: StorageKey) {
-        defaults.removeObject(forKey: key.rawValue)
+    func delete(key: String) {
+        defaults.removeObject(forKey: key)
     }
 }

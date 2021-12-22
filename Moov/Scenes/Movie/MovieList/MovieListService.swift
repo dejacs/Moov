@@ -22,21 +22,21 @@ final class MovieListService: MovieListServicing {
     }
     
     func fetchDailyTrendingMovieList(completion: @escaping (Result<MovieListResponse, ApiError>) -> Void) {
-        network.fetchData(with: MovieEndpoint.trendingDaily,
+        network.fetchData(urlText: MovieEndpoint.trendingDaily.urlText,
             resultType: MovieListResponse.self,
             decodingStrategy: .convertFromSnakeCase,
             completion: completion)
     }
     
     func fetchWeeklyTrendingMovieList(completion: @escaping (Result<MovieListResponse, ApiError>) -> Void) {
-        network.fetchData(with: MovieEndpoint.trendingWeekly,
+        network.fetchData(urlText: MovieEndpoint.trendingWeekly.urlText,
             resultType: MovieListResponse.self,
             decodingStrategy: .convertFromSnakeCase,
             completion: completion)
     }
     
     func search(movieText: String, page: Int, completion: @escaping (Result<MovieListResponse, ApiError>) -> Void) {
-        network.fetchData(with: MovieEndpoint.searchText(movieText, page: page),
+        network.fetchData(urlText: MovieEndpoint.searchText(movieText, page: page).urlText,
             resultType: MovieListResponse.self,
             decodingStrategy: .convertFromSnakeCase,
             completion: completion)

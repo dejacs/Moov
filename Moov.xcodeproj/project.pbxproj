@@ -9,7 +9,6 @@
 /* Begin PBXBuildFile section */
 		0B3BEA58B0BCB63B8E0B866E /* Pods_MoovTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 841863F8833C02414C1801AF /* Pods_MoovTests.framework */; };
 		149307419309492D654B435C /* Pods_Moov_MoovUITests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = EB9A066D2580A9954AEAC937 /* Pods_Moov_MoovUITests.framework */; };
-		1D0F0DBF275901D3009D649E /* NetworkCore.framework in Copy Frameworks */ = {isa = PBXBuildFile; fileRef = 1D0F0DBE2759018A009D649E /* NetworkCore.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
 		1D0F0DD82759395C009D649E /* SearchControl.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1D0F0DD72759395C009D649E /* SearchControl.swift */; };
 		1D198D49275B0BF400E05FAB /* NavigationControllerSpy.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1D198D48275B0BF400E05FAB /* NavigationControllerSpy.swift */; };
 		1D198D4B275B0E6F00E05FAB /* MovieListResponse+Fixture.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1D198D4A275B0E6F00E05FAB /* MovieListResponse+Fixture.swift */; };
@@ -55,20 +54,6 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
-		1D0F0DBD2759018A009D649E /* PBXContainerItemProxy */ = {
-			isa = PBXContainerItemProxy;
-			containerPortal = 1D0F0DB92759018A009D649E /* NetworkCore.xcodeproj */;
-			proxyType = 2;
-			remoteGlobalIDString = 1D0F0DAC2759011D009D649E;
-			remoteInfo = NetworkCore;
-		};
-		1D198D46275B098500E05FAB /* PBXContainerItemProxy */ = {
-			isa = PBXContainerItemProxy;
-			containerPortal = 1D0F0DB92759018A009D649E /* NetworkCore.xcodeproj */;
-			proxyType = 2;
-			remoteGlobalIDString = 1D198D3B275B01D400E05FAB;
-			remoteInfo = NetworkCoreTests;
-		};
 		1DF340A42757EC6A00FC5F64 /* PBXContainerItemProxy */ = {
 			isa = PBXContainerItemProxy;
 			containerPortal = 1DF340822757EC6700FC5F64 /* Project object */;
@@ -92,7 +77,6 @@
 			dstPath = "";
 			dstSubfolderSpec = 10;
 			files = (
-				1D0F0DBF275901D3009D649E /* NetworkCore.framework in Copy Frameworks */,
 			);
 			name = "Copy Frameworks";
 			runOnlyForDeploymentPostprocessing = 0;
@@ -102,7 +86,6 @@
 /* Begin PBXFileReference section */
 		15DC92836CCD015A7CA3165A /* Pods_Moov.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Moov.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		1AE7A2245A4C0F73927257B9 /* Pods-MoovTests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-MoovTests.release.xcconfig"; path = "Target Support Files/Pods-MoovTests/Pods-MoovTests.release.xcconfig"; sourceTree = "<group>"; };
-		1D0F0DB92759018A009D649E /* NetworkCore.xcodeproj */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.pb-project"; name = NetworkCore.xcodeproj; path = NetworkCore/NetworkCore.xcodeproj; sourceTree = "<group>"; };
 		1D0F0DD72759395C009D649E /* SearchControl.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchControl.swift; sourceTree = "<group>"; };
 		1D198D48275B0BF400E05FAB /* NavigationControllerSpy.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NavigationControllerSpy.swift; sourceTree = "<group>"; };
 		1D198D4A275B0E6F00E05FAB /* MovieListResponse+Fixture.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "MovieListResponse+Fixture.swift"; sourceTree = "<group>"; };
@@ -127,6 +110,7 @@
 		1DA8CFCA2758560000E6FD42 /* MovieEndpoint.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MovieEndpoint.swift; sourceTree = "<group>"; };
 		1DA8CFCC275859BD00E6FD42 /* MovieListService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MovieListService.swift; sourceTree = "<group>"; };
 		1DA8CFCE2758627300E6FD42 /* MovieDetailsService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MovieDetailsService.swift; sourceTree = "<group>"; };
+		1DCC76C2276EA5F200EFA8B2 /* Moov.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = Moov.entitlements; sourceTree = "<group>"; };
 		1DF3408A2757EC6700FC5F64 /* Moov.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Moov.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		1DF3408D2757EC6700FC5F64 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		1DF3408F2757EC6700FC5F64 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -187,23 +171,6 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
-		1D0F0DB827590144009D649E /* Dependencies */ = {
-			isa = PBXGroup;
-			children = (
-				1D0F0DB92759018A009D649E /* NetworkCore.xcodeproj */,
-			);
-			name = Dependencies;
-			sourceTree = "<group>";
-		};
-		1D0F0DBA2759018A009D649E /* Products */ = {
-			isa = PBXGroup;
-			children = (
-				1D0F0DBE2759018A009D649E /* NetworkCore.framework */,
-				1D198D47275B098500E05FAB /* NetworkCoreTests.xctest */,
-			);
-			name = Products;
-			sourceTree = "<group>";
-		};
 		1D198D52275BFB7E00E05FAB /* Mocks */ = {
 			isa = PBXGroup;
 			children = (
@@ -268,7 +235,6 @@
 		1DF340812757EC6700FC5F64 = {
 			isa = PBXGroup;
 			children = (
-				1D0F0DB827590144009D649E /* Dependencies */,
 				1DF3408C2757EC6700FC5F64 /* Moov */,
 				1DF340A62757EC6A00FC5F64 /* MoovTests */,
 				1DF340B02757EC6A00FC5F64 /* MoovUITests */,
@@ -291,6 +257,7 @@
 		1DF3408C2757EC6700FC5F64 /* Moov */ = {
 			isa = PBXGroup;
 			children = (
+				1DCC76C2276EA5F200EFA8B2 /* Moov.entitlements */,
 				1DF340C22757EE1900FC5F64 /* AppConfiguration */,
 				1DF340C12757EE1200FC5F64 /* Scenes */,
 				1DF340C02757EE0B00FC5F64 /* Common */,
@@ -496,12 +463,6 @@
 			mainGroup = 1DF340812757EC6700FC5F64;
 			productRefGroup = 1DF3408B2757EC6700FC5F64 /* Products */;
 			projectDirPath = "";
-			projectReferences = (
-				{
-					ProductGroup = 1D0F0DBA2759018A009D649E /* Products */;
-					ProjectRef = 1D0F0DB92759018A009D649E /* NetworkCore.xcodeproj */;
-				},
-			);
 			projectRoot = "";
 			targets = (
 				1DF340892757EC6700FC5F64 /* Moov */,
@@ -510,23 +471,6 @@
 			);
 		};
 /* End PBXProject section */
-
-/* Begin PBXReferenceProxy section */
-		1D0F0DBE2759018A009D649E /* NetworkCore.framework */ = {
-			isa = PBXReferenceProxy;
-			fileType = wrapper.framework;
-			path = NetworkCore.framework;
-			remoteRef = 1D0F0DBD2759018A009D649E /* PBXContainerItemProxy */;
-			sourceTree = BUILT_PRODUCTS_DIR;
-		};
-		1D198D47275B098500E05FAB /* NetworkCoreTests.xctest */ = {
-			isa = PBXReferenceProxy;
-			fileType = wrapper.cfbundle;
-			path = NetworkCoreTests.xctest;
-			remoteRef = 1D198D46275B098500E05FAB /* PBXContainerItemProxy */;
-			sourceTree = BUILT_PRODUCTS_DIR;
-		};
-/* End PBXReferenceProxy section */
 
 /* Begin PBXResourcesBuildPhase section */
 		1DF340882757EC6700FC5F64 /* Resources */ = {
@@ -846,12 +790,14 @@
 				API_HOST = "https://api.themoviedb.org/3";
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
+				CODE_SIGN_ENTITLEMENTS = Moov/Moov.entitlements;
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
 				DEVELOPMENT_TEAM = 2W8RYDG9HE;
 				GENERATE_INFOPLIST_FILE = YES;
 				IMAGE_HOST = "https://image.tmdb.org/t/p/w500";
 				INFOPLIST_FILE = Moov/Info.plist;
+				INFOPLIST_KEY_LSApplicationCategoryType = "public.app-category.entertainment";
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchStoryboardName = LaunchScreen;
 				INFOPLIST_KEY_UIMainStoryboardFile = "";
@@ -864,6 +810,7 @@
 				MARKETING_VERSION = 1.0;
 				PRODUCT_BUNDLE_IDENTIFIER = mockada.Moov;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				SUPPORTS_MACCATALYST = YES;
 				SWIFT_EMIT_LOC_STRINGS = YES;
 				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
@@ -877,12 +824,14 @@
 				API_HOST = "https://api.themoviedb.org/3";
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
+				CODE_SIGN_ENTITLEMENTS = Moov/Moov.entitlements;
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
 				DEVELOPMENT_TEAM = 2W8RYDG9HE;
 				GENERATE_INFOPLIST_FILE = YES;
 				IMAGE_HOST = "https://image.tmdb.org/t/p/w500";
 				INFOPLIST_FILE = Moov/Info.plist;
+				INFOPLIST_KEY_LSApplicationCategoryType = "public.app-category.entertainment";
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchStoryboardName = LaunchScreen;
 				INFOPLIST_KEY_UIMainStoryboardFile = "";
@@ -895,6 +844,7 @@
 				MARKETING_VERSION = 1.0;
 				PRODUCT_BUNDLE_IDENTIFIER = mockada.Moov;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				SUPPORTS_MACCATALYST = YES;
 				SWIFT_EMIT_LOC_STRINGS = YES;
 				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
