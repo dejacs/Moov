@@ -18,8 +18,6 @@ A arquitetura que usei foi a VIP-C e preferi não utilizar nenhum pod, mas no di
 
 Modularizei para deixar separada a camada de Network e também poderia criar um módulo para a parte de padrões de layout.
 
-Não cheguei a ter que injetar um arquivo do módulo principal no módulo secundário, mas aqui eu fiz um dummyzinho disso https://github.com/dejacs/Modules
-
 Deixei um worker `Storage` para trabalhar o `UserDefaults`, mas acabei não tendo a oportunidade de usar nesse app e também não o avancei muito.
 
 Já o `Network` eu criei na metade do ano e fui alterando conforme aprendi coisas novas.
