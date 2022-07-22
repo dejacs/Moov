@@ -5,7 +5,7 @@
 //  Created by Jade Silveira on 04/12/21.
 //
 
-import NetworkCore
+import NatworkSPM
 import UIKit
 
 final class MovieListServiceMock: MovieListServicing {

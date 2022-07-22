@@ -1,10 +1,3 @@
-//
-//  Enviroment.swift
-//  NetworkCore
-//
-//  Created by Jade Silveira on 03/12/21.
-//
-
 import Foundation
 
 public enum Enviroment {

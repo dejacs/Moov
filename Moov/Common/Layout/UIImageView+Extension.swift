@@ -6,7 +6,7 @@
 //
 
 import Foundation
-import NetworkCore
+import NatworkSPM
 import UIKit
 
 extension UIImageView {
@@ -17,13 +17,12 @@ extension UIImageView {
             }
             return
         }
-        
-        Network().fetchImage(urlText: MovieEndpoint.downloadImage(pathSufix: pathSufix).urlText) { [weak self] result in
+        Network().fetchData(urlText: MovieEndpoint.downloadImage(pathSufix: pathSufix).urlText) { [weak self] result in
             guard let self = self else { return }
             
             switch result {
             case .success(let image):
-                self.image = image
+                self.image = UIImage(data: image)
             case .failure:
                 self.image = UIImage(named: Strings.Placeholder.image)
             }

@@ -6,7 +6,6 @@
 //
 
 import XCTest
-import NetworkCore
 @testable import Moov
 
 private final class MovieCellSpy: LoadingCellDelegate {

@@ -1,0 +1,14 @@
+{
+  "pins" : [
+    {
+      "identity" : "natworkspm",
+      "kind" : "remoteSourceControl",
+      "location" : "https://github.com/mockada/NatworkSPM.git",
+      "state" : {
+        "branch" : "main",
+        "revision" : "5c9e50e972a5ec7d8786d566271ff682a791ad50"
+      }
+    }
+  ],
+  "version" : 2
+}

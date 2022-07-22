@@ -5,8 +5,8 @@
 //  Created by Jade Silveira on 04/12/21.
 //
 
+import NatworkSPM
 import XCTest
-import NetworkCore
 @testable import Moov
 
 private final class MovieDetailsPresenterSpy: MovieDetailsPresenting {

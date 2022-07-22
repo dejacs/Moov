@@ -6,7 +6,7 @@
 //
 
 import Foundation
-import NetworkCore
+import NatworkSPM
 
 protocol MovieListServicing {
     func fetchDailyTrendingMovieList(completion: @escaping (Result<MovieListResponse, ApiError>) -> Void)

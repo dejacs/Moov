@@ -5,8 +5,8 @@
 //  Created by Jade Silveira on 01/12/21.
 //
 
+import NatworkSPM
 import UIKit
-import NetworkCore
 
 enum MovieDetailsFactory {
     static func make(coordinator: MovieDetailsCoordinating, movieId: Int) -> UIViewController {

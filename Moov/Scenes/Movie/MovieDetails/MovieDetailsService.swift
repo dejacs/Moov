@@ -6,7 +6,7 @@
 //
 
 import Foundation
-import NetworkCore
+import NatworkSPM
 
 protocol MovieDetailsServicing {
     func search(movieId: Int, completion: @escaping (Result<MovieResponse, ApiError>) -> Void)
