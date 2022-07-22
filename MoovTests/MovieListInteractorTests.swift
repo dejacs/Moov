@@ -53,7 +53,7 @@ private final class MovieListPresenterSpy: MovieListPresenting {
 }
 
 private final class MovieListCoordinatorSpy: MovieListCoordinating {
-    var childCoordinators: [Coordinating] = [Coordinating]()
+    var childCoordinators: [CoordinatorProtocol] = [CoordinatorProtocol]()
     var navigationController: UINavigationController
     
     private(set) var startCallsCount = 0

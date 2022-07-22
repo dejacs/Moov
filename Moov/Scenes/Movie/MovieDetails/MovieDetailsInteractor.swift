@@ -9,6 +9,7 @@ import Foundation
 
 protocol MovieDetailsInteracting {
     func fetchMovieDetails()
+    func finish()
 }
 
 final class MovieDetailsInteractor: MovieDetailsInteracting {
@@ -38,5 +39,9 @@ final class MovieDetailsInteractor: MovieDetailsInteracting {
                 self.presenter.presentErrorView()
             }
         }
+    }
+    
+    func finish() {
+        coordinator.finish()
     }
 }

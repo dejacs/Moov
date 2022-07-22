@@ -36,7 +36,7 @@ private final class MovieDetailsPresenterSpy: MovieDetailsPresenting {
 }
 
 private final class MovieDetailsCoordinatorSpy: MovieDetailsCoordinating {
-    var childCoordinators = [Coordinating]()
+    var childCoordinators = [CoordinatorProtocol]()
     var navigationController: UINavigationController
     
     private(set) var startCallsCount = 0

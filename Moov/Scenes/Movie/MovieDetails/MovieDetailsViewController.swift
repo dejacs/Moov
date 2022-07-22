@@ -90,6 +90,11 @@ final class MovieDetailsViewController: UIViewController {
         buildLayout()
         interactor.fetchMovieDetails()
     }
+    
+    override func viewDidDisappear(_ animated: Bool) {
+        super.viewDidDisappear(animated)
+        interactor.finish()
+    }
 }
 
 // MARK: - ViewConfiguration

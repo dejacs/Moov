@@ -7,17 +7,35 @@
 
 import UIKit
 
-final class MainCoordinator: Coordinating {
-    var childCoordinators = [Coordinating]()
+final class MainCoordinator: CoordinatorProtocol {
     var navigationController: UINavigationController
+    var childCoordinators = [CoordinatorStartProtocol]()
+    var currentCoordinator: CoordinatorStartProtocol?
 
+    weak var outputDelegate: CoordinatorFinishDelegate?
+    weak var responseDelegate: CoordinatorOutputDelegate?
+    
     init(navigationController: UINavigationController) {
         self.navigationController = navigationController
     }
+    
+    func finish() {
+        outputDelegate?.finish()
+    }
+}
 
+extension MainCoordinator: CoordinatorStartProtocol {
     func start() {
-        let coordinator = MovieListCoordinator(navigationController: navigationController)
-        coordinator.start()
-        childCoordinators.append(coordinator)
+        currentCoordinator = MovieListCoordinator(navigationController: navigationController)
+        currentCoordinator?.outputDelegate = self
+        childCoordinators.append(currentCoordinator)
+        currentCoordinator?.start()
+    }
+}
+
+extension MainCoordinator: CoordinatorFinishDelegate {
+    func finish<T>(_ response: T?) {
+        childCoordinators.removeLast()
+        currentCoordinator = childCoordinators.last
     }
 }

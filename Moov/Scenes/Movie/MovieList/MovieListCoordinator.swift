@@ -7,26 +7,57 @@
 
 import UIKit
 
-protocol MovieListCoordinating: Coordinating {
+protocol MovieListCoordinating {
     func navigateToMovieDetails(movieId: Int)
 }
 
-final class MovieListCoordinator: MovieListCoordinating {
-    var childCoordinators = [Coordinating]()
+final class MovieListCoordinator: CoordinatorProtocol {
     var navigationController: UINavigationController
+    var childCoordinators = [CoordinatorStartProtocol]()
+    var currentCoordinator: CoordinatorStartProtocol?
 
+    weak var outputDelegate: CoordinatorFinishDelegate?
+    weak var responseDelegate: CoordinatorOutputDelegate?
+    
     init(navigationController: UINavigationController) {
         self.navigationController = navigationController
     }
+}
 
+extension MovieListCoordinator: CoordinatorStartProtocol {
     func start() {
         let viewController = MovieListFactory.make(coordinator: self)
         navigationController.pushViewController(viewController, animated: true)
     }
-    
+}
+
+extension MovieListCoordinator: MovieListCoordinating {
     func navigateToMovieDetails(movieId: Int) {
-        let coordinator = MovieDetailsCoordinator(navigationController: navigationController, movieId: movieId)
-        coordinator.start()
-        childCoordinators.append(coordinator)
+        currentCoordinator = MovieDetailsCoordinator(
+            navigationController: navigationController,
+            movieId: movieId)
+        
+        currentCoordinator?.outputDelegate = self
+        currentCoordinator?.responseDelegate = self
+        
+        childCoordinators.append(currentCoordinator)
+        currentCoordinator?.start()
+    }
+    
+    func finish() {
+        outputDelegate?.finish()
+    }
+}
+
+extension MovieListCoordinator: CoordinatorFinishDelegate {
+    func finish<T>(_ response: T?) {
+        childCoordinators.removeLast()
+        currentCoordinator = childCoordinators.last
+    }
+}
+
+extension MovieListCoordinator: CoordinatorOutputDelegate {
+    func response<T>(_ response: T) {
+        print(response)
     }
 }
