@@ -15,30 +15,30 @@ protocol MovieListServicing {
 }
 
 final class MovieListService: MovieListServicing {
-    private let network: Networking
+    private let network: NetworkCoreProtocol
     
-    init(network: Networking) {
+    init(network: NetworkCoreProtocol) {
         self.network = network
     }
     
     func fetchDailyTrendingMovieList(completion: @escaping (Result<MovieListResponse, ApiError>) -> Void) {
-        network.fetchData(urlText: MovieEndpoint.trendingDaily.urlText,
-            resultType: MovieListResponse.self,
-            decodingStrategy: .convertFromSnakeCase,
-            completion: completion)
+        let endpoint: EndpointProtocol = TrendingDailyEndpoint()
+        network.fetchDecodedDataWithURL(endpoint: endpoint,
+                                        resultType: MovieListResponse.self,
+                                        completion: completion)
     }
     
     func fetchWeeklyTrendingMovieList(completion: @escaping (Result<MovieListResponse, ApiError>) -> Void) {
-        network.fetchData(urlText: MovieEndpoint.trendingWeekly.urlText,
-            resultType: MovieListResponse.self,
-            decodingStrategy: .convertFromSnakeCase,
-            completion: completion)
+        let endpoint: EndpointProtocol = TrendingWeeklyEndpoint()
+        network.fetchDecodedDataWithURL(endpoint: endpoint,
+                                        resultType: MovieListResponse.self,
+                                        completion: completion)
     }
     
     func search(movieText: String, page: Int, completion: @escaping (Result<MovieListResponse, ApiError>) -> Void) {
-        network.fetchData(urlText: MovieEndpoint.searchText(movieText, page: page).urlText,
-            resultType: MovieListResponse.self,
-            decodingStrategy: .convertFromSnakeCase,
-            completion: completion)
+        let endpoint: EndpointProtocol = SearchTextEndpoint(text: movieText, page: page.description)
+        network.fetchDecodedDataWithURL(endpoint: endpoint,
+                                        resultType: MovieListResponse.self,
+                                        completion: completion)
     }
 }

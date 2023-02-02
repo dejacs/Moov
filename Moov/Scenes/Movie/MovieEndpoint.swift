@@ -8,33 +8,78 @@
 import Foundation
 import NatworkSPM
 
-enum MovieEndpoint {
-    case trendingDaily
-    case trendingWeekly
-    case searchMovieId(Int)
-    case searchText(String, page: Int)
-    case downloadImage(pathSufix: String)
+struct TrendingDailyEndpoint: EndpointProtocol {
+    var cachePolicy: URLRequest.CachePolicy = .useProtocolCachePolicy
+    var decodingStrategy: JSONDecoder.KeyDecodingStrategy = .convertFromSnakeCase
     
-    var urlText: String {
-        let apiKey = "5725d89a6357e321ddfa9db44c0dfc27"
-        let locale = NSLocalizedString(Strings.LocalizableKeys.locale, comment: "")
-        guard let host = Enviroment.Host.api, let imageHost = Enviroment.Host.imageApi else { return "" }
-        
-        switch self {
-        case .trendingDaily:
-            return "\(host)/trending/movie/day?api_key=\(apiKey)&language=\(locale)"
-            
-        case .trendingWeekly:
-            return "\(host)/trending/movie/week?api_key=\(apiKey)&language=\(locale)"
-            
-        case .searchMovieId(let id):
-            return "\(host)/movie/\(id)?api_key=\(apiKey)&language=\(locale)"
-            
-        case let .searchText(text, page):
-            return "\(host)/search/movie?api_key=\(apiKey)&language=\(locale)&query=\(text)&page=\(page)"
-            
-        case .downloadImage(let pathSufix):
-            return imageHost + pathSufix
-        }
-    }
+    let host: String = Enviroment.Host.api ?? ""
+    let method: NatworkSPM.EndpointMethod = .get
+    
+    let apiVersion: String = "3"
+    var path: String { "/\(apiVersion)/trending/movie/day" }
+    
+    let apiKey = "5725d89a6357e321ddfa9db44c0dfc27"
+    let locale = NSLocalizedString(Strings.LocalizableKeys.locale, comment: "")
+    var params: [String : Any] { ["api_key": apiKey, "language": locale] }
+}
+
+struct TrendingWeeklyEndpoint: EndpointProtocol {
+    var cachePolicy: URLRequest.CachePolicy = .useProtocolCachePolicy
+    var decodingStrategy: JSONDecoder.KeyDecodingStrategy = .convertFromSnakeCase
+    
+    let host: String = Enviroment.Host.api ?? ""
+    let method: NatworkSPM.EndpointMethod = .get
+    
+    let apiVersion: String = "3"
+    var path: String { "/\(apiVersion)/trending/movie/week" }
+    
+    let apiKey = "5725d89a6357e321ddfa9db44c0dfc27"
+    let locale = NSLocalizedString(Strings.LocalizableKeys.locale, comment: "")
+    var params: [String : Any] { ["api_key": apiKey, "language": locale] }
+}
+
+struct MovieSearchIdEndpoint: EndpointProtocol {
+    var cachePolicy: URLRequest.CachePolicy = .useProtocolCachePolicy
+    var decodingStrategy: JSONDecoder.KeyDecodingStrategy = .convertFromSnakeCase
+    
+    let host: String = Enviroment.Host.api ?? ""
+    let method: NatworkSPM.EndpointMethod = .get
+    
+    let apiVersion: String = "3"
+    var path: String { "/\(apiVersion)/movie/\(id)" }
+    var id: String
+    
+    let apiKey = "5725d89a6357e321ddfa9db44c0dfc27"
+    let locale = NSLocalizedString(Strings.LocalizableKeys.locale, comment: "")
+    var params: [String : Any] { ["api_key": apiKey, "language": locale] }
+}
+
+struct SearchTextEndpoint: EndpointProtocol {
+    var cachePolicy: URLRequest.CachePolicy = .useProtocolCachePolicy
+    var decodingStrategy: JSONDecoder.KeyDecodingStrategy = .convertFromSnakeCase
+    
+    let host: String = Enviroment.Host.api ?? ""
+    let method: NatworkSPM.EndpointMethod = .get
+    
+    let apiVersion: String = "3"
+    var path: String { "/\(apiVersion)/search/movie" }
+    
+    let apiKey = "5725d89a6357e321ddfa9db44c0dfc27"
+    let locale = NSLocalizedString(Strings.LocalizableKeys.locale, comment: "")
+    var text: String
+    var page: String
+    var params: [String : Any] { ["api_key": apiKey,
+                                  "language": locale,
+                                  "query": text,
+                                  "page": page] }
+}
+
+struct DownloadImageEndpoint: EndpointProtocol {
+    var cachePolicy: URLRequest.CachePolicy = .useProtocolCachePolicy
+    
+    let host: String = Enviroment.Host.imageApi ?? ""
+    let method: NatworkSPM.EndpointMethod = .get
+    
+    var path: String { "/t/p/w500/\(pathSufix)" }
+    var pathSufix: String
 }

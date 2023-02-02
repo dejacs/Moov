@@ -11,7 +11,7 @@ import UIKit
 enum MovieListFactory {
     static func make(coordinator: MovieListCoordinating) -> UIViewController {
         let presenter = MovieListPresenter()
-        let service: MovieListServicing = CommandLine.arguments.contains("--uitesting") ? MovieListServiceMock() : MovieListService(network: Network())
+        let service: MovieListServicing = CommandLine.arguments.contains("--uitesting") ? MovieListServiceMock() : MovieListService(network: NetworkCore())
         let interactor = MovieListInteractor(presenter: presenter, coordinator: coordinator, service: service)
         let viewController = MovieListViewController(interactor: interactor)
         

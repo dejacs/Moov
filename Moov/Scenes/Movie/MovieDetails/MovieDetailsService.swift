@@ -13,16 +13,14 @@ protocol MovieDetailsServicing {
 }
 
 final class MovieDetailsService: MovieDetailsServicing {
-    private let network: Networking
+    private let network: NetworkCoreProtocol
     
-    init(network: Networking) {
+    init(network: NetworkCoreProtocol) {
         self.network = network
     }
     
     func search(movieId: Int, completion: @escaping (Result<MovieResponse, ApiError>) -> Void) {
-        network.fetchData(urlText: MovieEndpoint.searchMovieId(movieId).urlText,
-            resultType: MovieResponse.self,
-            decodingStrategy: .convertFromSnakeCase,
-            completion: completion)
+        let endpoint: EndpointProtocol = MovieSearchIdEndpoint(id: movieId.description)
+        network.fetchDecodedDataWithURL(endpoint: endpoint, resultType: MovieResponse.self, completion: completion)
     }
 }

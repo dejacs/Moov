@@ -17,7 +17,7 @@ extension UIImageView {
             }
             return
         }
-        Network().fetchData(urlText: MovieEndpoint.downloadImage(pathSufix: pathSufix).urlText) { [weak self] result in
+        NetworkCore().fetchDataWithURL(endpoint: DownloadImageEndpoint(pathSufix: pathSufix)) { [weak self] result in
             guard let self = self else { return }
             
             switch result {

@@ -3,4 +3,70 @@
    uuid = "D700F964-6E7F-458F-9DCD-4EDAC3EF0CEF"
    type = "1"
    version = "2.0">
+   <Breakpoints>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            uuid = "671B8CA0-F84E-4F30-8F1B-A82CCBCBBD3E"
+            shouldBeEnabled = "No"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "../../Library/Developer/Xcode/DerivedData/Moov-cttoqpgiaxriwdcuzdujnohgjwtx/SourcePackages/checkouts/NatworkSPM/Sources/NatworkSPM/CallbackHandler.swift"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "67"
+            endingLineNumber = "67"
+            landmarkName = "handleDataContent(endpoint:sessionResult:completion:)"
+            landmarkType = "7">
+            <Locations>
+               <Location
+                  uuid = "671B8CA0-F84E-4F30-8F1B-A82CCBCBBD3E - a38d35eb314420bb"
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "NatworkSPM.CallbackHandler.handleDataContent(endpoint: NatworkSPM.EndpointProtocol, sessionResult: NatworkSPM.URLSessionResult, completion: (Swift.Result&lt;Foundation.Data, NatworkSPM.ApiError&gt;) -&gt; ()) -&gt; ()"
+                  moduleName = "Moov"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/jadesilveira/Library/Developer/Xcode/DerivedData/Moov-cttoqpgiaxriwdcuzdujnohgjwtx/SourcePackages/checkouts/NatworkSPM/Sources/NatworkSPM/CallbackHandler.swift"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "67"
+                  endingLineNumber = "67"
+                  offsetFromSymbolStart = "156">
+               </Location>
+               <Location
+                  uuid = "671B8CA0-F84E-4F30-8F1B-A82CCBCBBD3E - a38d35eb314420bb"
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "NatworkSPM.CallbackHandler.handleDataContent(endpoint: NatworkSPM.EndpointProtocol, sessionResult: NatworkSPM.URLSessionResult, completion: (Swift.Result&lt;Foundation.Data, NatworkSPM.ApiError&gt;) -&gt; ()) -&gt; ()"
+                  moduleName = "Moov"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/jadesilveira/Library/Developer/Xcode/DerivedData/Moov-cttoqpgiaxriwdcuzdujnohgjwtx/SourcePackages/checkouts/NatworkSPM/Sources/NatworkSPM/CallbackHandler.swift"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "67"
+                  endingLineNumber = "67"
+                  offsetFromSymbolStart = "232">
+               </Location>
+            </Locations>
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            uuid = "BFCFE601-1506-4594-BFAE-2040651B8495"
+            shouldBeEnabled = "No"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "../../Library/Developer/Xcode/DerivedData/Moov-cttoqpgiaxriwdcuzdujnohgjwtx/SourcePackages/checkouts/NatworkSPM/Sources/NatworkSPM/RequestFactory.swift"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "21"
+            endingLineNumber = "21"
+            landmarkName = "makeURL(endpoint:)"
+            landmarkType = "7">
+         </BreakpointContent>
+      </BreakpointProxy>
+   </Breakpoints>
 </Bucket>
